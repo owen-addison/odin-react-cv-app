@@ -1,5 +1,5 @@
-import Personal from './Personal';
-import DisplayPreview from './DisplayPreview';
+import Personal from './components/Personal';
+import DisplayPreview from './components/DisplayPreview';
 import './App.css';
 
 function App() {
