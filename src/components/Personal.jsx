@@ -1,5 +1,45 @@
 function Personal() {
-  return <></>;
+  return (
+    <>
+      <div className="form-container">
+        <form>
+          <div className="form-group">
+            <label htmlFor="name">Name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="telephone">Telephone Number</label>
+            <input
+              type="tel"
+              id="telephone"
+              name="telephone"
+              pattern="[+]?[(]?[0-9]{1,4}[)]?[-\s./0-9]*"
+              title="Phone number with +, -, and space. Including country code is encouraged."
+              required
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="website">Website</label>
+            <input type="url" id="website" name="website" required />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="about">About/Introduction</label>
+            <textarea id="about" name="about" required></textarea>
+          </div>
+
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </>
+  );
 }
 
 export default Personal;
