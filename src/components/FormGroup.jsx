@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 function FormGroup({ label, type, id, pattern, placeholder, required }) {
   return (
-    <div className="form-group grid grid-cols-2 gap-4 justify-items-start items-start">
+    <div className="form-group grid grid-cols-[1fr,3fr] gap-4 justify-items-start items-start">
       <label htmlFor={id}>{label}</label>
       {type !== 'textarea' ? (
         <input

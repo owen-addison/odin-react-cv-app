@@ -35,7 +35,7 @@ function Personal() {
             required={true}
           />
           <FormGroup
-            label="Telephone Number:"
+            label="Number:"
             type="tel"
             id="telephone"
             value={formData.telephone}
@@ -52,7 +52,7 @@ function Personal() {
             required={true}
           />
           <FormGroup
-            label="About/Introduction:"
+            label="About:"
             type="textarea"
             id="about"
             value={formData.about}
