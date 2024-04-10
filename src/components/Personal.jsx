@@ -1,17 +1,43 @@
 import FormGroup from './FormGroup';
+import { useState } from 'react';
 
 function Personal() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    telephone: '',
+    website: '',
+    about: '',
+  });
+
+  const handleChange = (id, value) => {
+    setFormData((prev) => ({ ...prev, [id]: value }));
+  };
+
   return (
     <>
       <div className="personal-container">
         <form className="flex flex-col justify-start content-start">
-          <FormGroup label="Name" type="text" id="name" required={true} />
-          <FormGroup label="Email" type="email" id="email" required={true} />
+          <FormGroup
+            label="Name"
+            type="text"
+            id="name"
+            onChange={(e) => handleChange('name', e.target.value)}
+            required={true}
+          />
+          <FormGroup
+            label="Email"
+            type="email"
+            id="email"
+            onChange={(e) => handleChange('email', e.target.value)}
+            required={true}
+          />
           <FormGroup
             label="Telephone Number"
             type="tel"
             id="telephone"
             pattern="[+]?[(]?[0-9]{1,4}[)]?[-\s./0-9]*"
+            onChange={(e) => handleChange('telephone', e.target.value)}
             required={true}
           />
           <FormGroup label="Website" type="url" id="website" required={true} />
@@ -19,6 +45,7 @@ function Personal() {
             label="About/Introduction"
             type="textarea"
             id="about"
+            onChange={(e) => handleChange('about', e.target.value)}
             required={true}
           />
 
