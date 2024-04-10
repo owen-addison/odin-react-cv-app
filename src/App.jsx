@@ -1,12 +1,10 @@
-import Form from './components/Form';
-import DisplayPreview from './components/DisplayPreview';
+import CVBuilder from './components/CVBuilder';
 import './App.css';
 
 function App() {
   return (
     <>
-      <Form />
-      <DisplayPreview />
+      <CVBuilder />
     </>
   );
 }

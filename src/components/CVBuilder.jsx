@@ -17,7 +17,7 @@ function CVBuilder() {
   };
 
   return (
-    <div>
+    <>
       <div className="form-container w-96 flex flex-col content-start">
         <Personal
           personalDetails={personalDetails}
@@ -25,7 +25,7 @@ function CVBuilder() {
         />
       </div>
       <DisplayPreview personalDetails={personalDetails} />
-    </div>
+    </>
   );
 }
 
