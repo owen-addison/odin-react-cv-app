@@ -2,8 +2,8 @@ function Personal() {
   return (
     <>
       <div className="personal-container">
-        <form>
-          <div className="form-group">
+        <form className="flex flex-col justify-start content-start">
+          <div className="form-group grid ">
             <label htmlFor="name">Name</label>
             <input type="text" id="name" name="name" required />
           </div>

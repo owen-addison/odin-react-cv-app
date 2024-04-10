@@ -24,3 +24,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
 }
+
+.form-group {
+  @apply grid grid-cols-2 gap-4;
+}
