@@ -61,9 +61,11 @@ function Personal() {
             required={true}
           />
 
-          <button type="submit" className="submit-button">
-            Submit
-          </button>
+          <div className="submit-container flex flex-row justify-end">
+            <button type="submit" className="submit-button">
+              Submit
+            </button>
+          </div>
         </form>
       </div>
     </>
