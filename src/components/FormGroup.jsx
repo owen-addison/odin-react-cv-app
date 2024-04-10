@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 function FormGroup({ label, type, id, pattern, placeholder, required }) {
   return (
     <div className="form-group grid grid-cols-2 gap-4 items-center">
@@ -24,5 +26,14 @@ function FormGroup({ label, type, id, pattern, placeholder, required }) {
     </div>
   );
 }
+
+FormGroup.propTypes = {
+  label: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  pattern: PropTypes.string,
+  placeholder: PropTypes.string,
+  required: PropTypes.bool,
+};
 
 export default FormGroup;
