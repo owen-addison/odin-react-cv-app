@@ -18,10 +18,12 @@ function CVBuilder() {
 
   return (
     <div>
-      <Personal
-        personalDetails={personalDetails}
-        setPersonalDetails={handlePersonalDetailsSubmit}
-      />
+      <div className="form-container w-96 flex flex-col content-start">
+        <Personal
+          personalDetails={personalDetails}
+          setPersonalDetails={handlePersonalDetailsSubmit}
+        />
+      </div>
       <DisplayPreview personalDetails={personalDetails} />
     </div>
   );
