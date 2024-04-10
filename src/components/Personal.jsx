@@ -1,7 +1,7 @@
 function Personal() {
   return (
     <>
-      <div className="form-container">
+      <div className="personal-container">
         <form>
           <div className="form-group">
             <label htmlFor="name">Name</label>
