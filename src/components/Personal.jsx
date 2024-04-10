@@ -1,63 +1,67 @@
 import FormGroup from './FormGroup';
+import PropTypes from 'prop-types';
 import { useState } from 'react';
 
-function Personal() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    telephone: '',
-    website: '',
-    about: '',
-  });
+function Personal({ personalDetails, setPersonalDetails }) {
+  const [formValues, setFormValues] = useState({ ...personalDetails });
 
-  const handleChange = (id, value) => {
-    setFormData((prev) => ({ ...prev, [id]: value }));
+  const handleChange = (event) => {
+    const { id, value } = event.target;
+    setFormValues((prevState) => ({ ...prevState, [id]: value }));
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setPersonalDetails(formValues);
   };
 
   return (
     <>
       <div className="personal-container">
-        <form className="flex flex-col justify-start gap-2 content-start">
+        <form
+          className="flex flex-col justify-start gap-2 content-start"
+          onSubmit={handleSubmit}
+        >
           <FormGroup
             label="Name:"
             type="text"
             id="name"
-            value={formData.name}
-            onChange={(e) => handleChange('name', e.target.value)}
+            value={formValues.name}
+            onChange={handleChange}
             required={true}
           />
           <FormGroup
             label="Email:"
             type="email"
             id="email"
-            value={formData.email}
-            onChange={(e) => handleChange('email', e.target.value)}
+            value={formValues.email}
+            onChange={handleChange}
             required={true}
           />
           <FormGroup
             label="Number:"
             type="tel"
             id="telephone"
-            value={formData.telephone}
+            value={formValues.telephone}
             pattern="[+]?[(]?[0-9]{1,4}[)]?[-\s./0-9]*"
-            onChange={(e) => handleChange('telephone', e.target.value)}
+            onChange={handleChange}
             required={true}
           />
           <FormGroup
             label="Website:"
             type="text"
             id="website"
-            value={formData.website}
+            value={formValues.website}
             pattern=".*\.(com|net|org|info|biz|name|io|tech|co|website|digital|online|us|ca|uk|au|de|fr|it|es|jp|cn|in)$"
-            onChange={(e) => handleChange('website', e.target.value)}
+            onChange={handleChange}
             required={true}
           />
           <FormGroup
             label="About:"
             type="textarea"
             id="about"
-            value={formData.about}
-            onChange={(e) => handleChange('about', e.target.value)}
+            value={formValues.about}
+            onChange={handleChange}
             required={true}
           />
 
@@ -71,6 +75,17 @@ function Personal() {
     </>
   );
 }
+
+Personal.propTypes = {
+  personalDetails: PropTypes.shape({
+    name: PropTypes.string,
+    email: PropTypes.string,
+    telephone: PropTypes.string,
+    website: PropTypes.string,
+    about: PropTypes.string,
+  }).isRequired,
+  setPersonalDetails: PropTypes.func.isRequired,
+};
 
 export default Personal;
 
