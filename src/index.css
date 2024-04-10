@@ -35,6 +35,10 @@ body {
   background-color: #333333;
 }
 
+.textarea-class {
+  @apply w-full;
+}
+
 .submit-button {
   @apply w-min border-solid rounded-md border-2 px-4 py-1;
   background-color: #333333;
