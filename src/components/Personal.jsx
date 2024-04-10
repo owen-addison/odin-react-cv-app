@@ -45,7 +45,7 @@ function Personal() {
           />
           <FormGroup
             label="Website:"
-            type="url"
+            type="text"
             id="website"
             value={formData.website}
             pattern=".*\.(com|net|org|info|biz|name|io|tech|co|website|digital|online|us|ca|uk|au|de|fr|it|es|jp|cn|in)$"
