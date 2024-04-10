@@ -17,9 +17,9 @@ function Personal() {
   return (
     <>
       <div className="personal-container">
-        <form className="flex flex-col justify-start content-start">
+        <form className="flex flex-col justify-start gap-2 content-start">
           <FormGroup
-            label="Name"
+            label="Name:"
             type="text"
             id="name"
             value={formData.name}
@@ -27,7 +27,7 @@ function Personal() {
             required={true}
           />
           <FormGroup
-            label="Email"
+            label="Email:"
             type="email"
             id="email"
             value={formData.email}
@@ -35,7 +35,7 @@ function Personal() {
             required={true}
           />
           <FormGroup
-            label="Telephone Number"
+            label="Telephone Number:"
             type="tel"
             id="telephone"
             value={formData.telephone}
@@ -43,9 +43,16 @@ function Personal() {
             onChange={(e) => handleChange('telephone', e.target.value)}
             required={true}
           />
-          <FormGroup label="Website" type="url" id="website" required={true} />
           <FormGroup
-            label="About/Introduction"
+            label="Website:"
+            type="url"
+            id="website"
+            value={formData.website}
+            onChange={(e) => handleChange('telephone', e.target.value)}
+            required={true}
+          />
+          <FormGroup
+            label="About/Introduction:"
             type="textarea"
             id="about"
             value={formData.about}
