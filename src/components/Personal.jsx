@@ -1,39 +1,26 @@
+import FormGroup from './FormGroup';
+
 function Personal() {
   return (
     <>
       <div className="personal-container">
         <form className="flex flex-col justify-start content-start">
-          <div className="form-group grid ">
-            <label htmlFor="name">Name</label>
-            <input type="text" id="name" name="name" required />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="email">Email</label>
-            <input type="email" id="email" name="email" required />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="telephone">Telephone Number</label>
-            <input
-              type="tel"
-              id="telephone"
-              name="telephone"
-              pattern="[+]?[(]?[0-9]{1,4}[)]?[-\s./0-9]*"
-              title="Phone number with +, -, and space. Including country code is encouraged."
-              required
-            />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="website">Website</label>
-            <input type="url" id="website" name="website" required />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="about">About/Introduction</label>
-            <textarea id="about" name="about" required></textarea>
-          </div>
+          <FormGroup label="Name" type="text" id="name" required={true} />
+          <FormGroup label="Email" type="email" id="email" required={true} />
+          <FormGroup
+            label="Telephone Number"
+            type="tel"
+            id="telephone"
+            pattern="[+]?[(]?[0-9]{1,4}[)]?[-\s./0-9]*"
+            required={true}
+          />
+          <FormGroup label="Website" type="url" id="website" required={true} />
+          <FormGroup
+            label="About/Introduction"
+            type="textarea"
+            id="about"
+            required={true}
+          />
 
           <button type="submit">Submit</button>
         </form>
