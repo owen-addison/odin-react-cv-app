@@ -22,6 +22,7 @@ function Personal() {
             label="Name"
             type="text"
             id="name"
+            value={formData.name}
             onChange={(e) => handleChange('name', e.target.value)}
             required={true}
           />
@@ -29,6 +30,7 @@ function Personal() {
             label="Email"
             type="email"
             id="email"
+            value={formData.email}
             onChange={(e) => handleChange('email', e.target.value)}
             required={true}
           />
@@ -36,6 +38,7 @@ function Personal() {
             label="Telephone Number"
             type="tel"
             id="telephone"
+            value={formData.telephone}
             pattern="[+]?[(]?[0-9]{1,4}[)]?[-\s./0-9]*"
             onChange={(e) => handleChange('telephone', e.target.value)}
             required={true}
@@ -45,6 +48,7 @@ function Personal() {
             label="About/Introduction"
             type="textarea"
             id="about"
+            value={formData.about}
             onChange={(e) => handleChange('about', e.target.value)}
             required={true}
           />
