@@ -1,11 +1,11 @@
-import Personal from './components/Personal';
+import Form from './components/Form';
 import DisplayPreview from './components/DisplayPreview';
 import './App.css';
 
 function App() {
   return (
     <>
-      <Personal />
+      <Form />
       <DisplayPreview />
     </>
   );

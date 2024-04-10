@@ -1,4 +1,4 @@
-import Personal from './components/Personal';
+import Personal from './Personal';
 
 function Form() {
   return (
