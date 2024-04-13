@@ -67,7 +67,7 @@ function Personal({ personalDetails, setPersonalDetails }) {
 
           <div className="submit-container flex flex-row justify-start my-2">
             <button type="submit" className="submit-button">
-              Submit
+              SUBMIT
             </button>
           </div>
         </form>
