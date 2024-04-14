@@ -1,9 +1,13 @@
 import FormGroup from './FormGroup';
 import PropTypes from 'prop-types';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function Personal({ personalDetails, setPersonalDetails }) {
   const [formValues, setFormValues] = useState({ ...personalDetails });
+
+  useEffect(() => {
+    setFormValues({ ...personalDetails });
+  }, [personalDetails]);
 
   const handleChange = (event) => {
     const { id, value } = event.target;

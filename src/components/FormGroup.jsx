@@ -1,6 +1,14 @@
 import PropTypes from 'prop-types';
 
-function FormGroup({ label, type, id, pattern, placeholder, required }) {
+function FormGroup({
+  label,
+  type,
+  id,
+  pattern,
+  placeholder,
+  required,
+  onChange,
+}) {
   return (
     <div className="form-group grid grid-cols-[1fr,3fr] gap-4 justify-items-start items-start">
       <label htmlFor={id}>{label}</label>
@@ -12,6 +20,7 @@ function FormGroup({ label, type, id, pattern, placeholder, required }) {
           pattern={pattern}
           placeholder={placeholder}
           required={required}
+          onChange={onChange}
           className="input-class"
         />
       ) : (
@@ -19,6 +28,7 @@ function FormGroup({ label, type, id, pattern, placeholder, required }) {
           id={id}
           name={id}
           required={required}
+          onChange={onChange}
           className="textarea-class"
           placeholder={placeholder}
         ></textarea>
@@ -32,6 +42,7 @@ FormGroup.propTypes = {
   type: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
   pattern: PropTypes.string,
+  onChange: PropTypes.func.isRequired,
   placeholder: PropTypes.string,
   required: PropTypes.bool,
 };
