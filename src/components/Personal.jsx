@@ -43,7 +43,7 @@ function Personal({ personalDetails, setPersonalDetails }) {
             type="tel"
             id="telephone"
             value={formValues.telephone}
-            pattern="[+]?[(]?[0-9]{1,4}[)]?[-\s./0-9]*"
+            pattern="[0-9]+"
             onChange={handleChange}
             required={true}
           />
