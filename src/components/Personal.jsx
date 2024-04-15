@@ -16,6 +16,17 @@ function Personal({ personalDetails, setPersonalDetails }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    // Regex to allow numbers with an optional '+' at the start.
+    const phoneRegex = /^[+]?[0-9]+$/;
+
+    if (!phoneRegex.test(formValues.telephone)) {
+      alert(
+        'Please enter a valid telephone number with numbers and an optional leading "+".',
+      );
+      return; // Prevent form submission if the telephone number is invalid
+    }
+
     setPersonalDetails(formValues);
   };
 
@@ -47,7 +58,6 @@ function Personal({ personalDetails, setPersonalDetails }) {
             type="tel"
             id="telephone"
             value={formValues.telephone}
-            pattern="[0-9]+"
             onChange={handleChange}
             required={true}
           />
