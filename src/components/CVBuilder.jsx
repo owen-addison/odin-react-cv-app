@@ -1,4 +1,4 @@
-import Personal from './Personal';
+import Form from './Form';
 import DisplayPreview from './DisplayPreview';
 import { useState } from 'react';
 
@@ -11,19 +11,12 @@ function CVBuilder() {
     about: 'Brief introduction of yourself and your motivations...',
   });
 
-  // Function to update personal details when the form is submitted
-  const handlePersonalDetailsSubmit = (newDetails) => {
-    setPersonalDetails(newDetails);
-  };
-
   return (
     <>
-      <div className="form-container w-96 flex flex-col content-start">
-        <Personal
-          personalDetails={personalDetails}
-          setPersonalDetails={handlePersonalDetailsSubmit}
-        />
-      </div>
+      <Form
+        personalDetails={personalDetails}
+        setPersonalDetails={setPersonalDetails}
+      />
       <DisplayPreview personalDetails={personalDetails} />
     </>
   );
