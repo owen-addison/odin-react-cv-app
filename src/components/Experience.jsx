@@ -9,7 +9,7 @@ function Experience({ type }) {
       formGroups = (
         <>
           <FormGroup label="Institute:" type="text" id="institute" />
-          <FormGroup label="Degree:" type="text" id="degree" />
+          <FormGroup label="Area of study:" type="text" id="study" />
           {/* Add more form groups for educational experience */}
         </>
       );
