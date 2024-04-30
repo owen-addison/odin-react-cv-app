@@ -38,7 +38,7 @@ function Experience({ type, educationDetails, setEducationDetails }) {
             onChange={handleChange}
             required={true}
           />
-          <div className="dates-container flex gap-4">
+          <div className="dates-container flex flex-col gap-4">
             <FormGroup
               label="Start Date:"
               type="date"
@@ -94,7 +94,7 @@ function Experience({ type, educationDetails, setEducationDetails }) {
             onChange={handleChange}
             required={true}
           />
-          <div className="dates-container flex gap-4">
+          <div className="dates-container flex flex-col gap-4">
             <FormGroup
               label="Start Date:"
               type="date"
