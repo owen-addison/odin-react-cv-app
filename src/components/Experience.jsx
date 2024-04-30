@@ -142,18 +142,20 @@ function Experience({ type, educationDetails, setEducationDetails }) {
         className="flex flex-col justify-start gap-2 content-start"
         onSubmit={handleSubmit}
       >
-        <div className="experience-section flex flex-row justify-start gap-2 content-center">
+        <div className="experience-section flex flex-col justify-start gap-2 content-start">
           {formGroups}
         </div>
-        <div className="submit-container flex flex-row justify-start my-2">
-          <button type="submit" className="submit-button">
-            SUBMIT
-          </button>
-        </div>
-        <div className="remove-container flex flex-row justify-start my-2">
-          <button type="remove" className="remove-button">
-            REMOVE
-          </button>
+        <div className="button-container flex flex-row gap-4 justify-end">
+          <div className="submit-container flex flex-row justify-start my-2">
+            <button type="submit" className="submit-button">
+              SUBMIT
+            </button>
+          </div>
+          <div className="remove-container flex flex-row justify-start my-2">
+            <button type="remove" className="remove-button">
+              REMOVE
+            </button>
+          </div>
         </div>
       </form>
     </div>
