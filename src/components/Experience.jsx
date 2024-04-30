@@ -6,8 +6,11 @@ function Experience({ type, educationDetails, setEducationDetails }) {
   const [formValues, setFormValues] = useState({ ...educationDetails });
 
   const handleChange = (event) => {
-    const { id, value } = event.target;
-    setFormValues((prevState) => ({ ...prevState, [id]: value }));
+    const { id, value, type } = event.target;
+    setFormValues((prevState) => ({
+      ...prevState,
+      [id]: type === 'checkbox' ? event.target.checked : value,
+    }));
   };
 
   const handleSubmit = (event) => {
@@ -27,14 +30,15 @@ function Experience({ type, educationDetails, setEducationDetails }) {
             onChange={handleChange}
             required={true}
           />
-          {!formValues.stillHere && (
+          {formValues.stillHere ? null : (
             <FormGroup
               label="End Date:"
               type="date"
               id="endDate"
               value={formValues.endDate}
               onChange={handleChange}
-              required={true}
+              required={!formValues.stillHere}
+              disabled={formValues.stillHere}
             />
           )}
           <FormGroup
