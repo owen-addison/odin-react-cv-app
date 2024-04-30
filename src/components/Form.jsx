@@ -1,4 +1,5 @@
 import Personal from './Personal';
+import Educational from './Educational';
 import PropTypes from 'prop-types';
 
 function Form({ personalDetails, setPersonalDetails }) {
@@ -14,6 +15,7 @@ function Form({ personalDetails, setPersonalDetails }) {
           personalDetails={personalDetails}
           setPersonalDetails={handlePersonalDetailsSubmit}
         />
+        <Educational />
       </div>
     </>
   );
