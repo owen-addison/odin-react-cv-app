@@ -31,13 +31,39 @@ function Experience({ type, educationDetails, setEducationDetails }) {
             required={true}
           />
           <FormGroup
-            label="Area of study:"
+            label="Area of Study:"
             type="text"
             id="study"
             value={formValues.study}
             onChange={handleChange}
             required={true}
           />
+          <div className="dates-container flex gap-4">
+            <FormGroup
+              label="Start Date:"
+              type="date"
+              id="startDate"
+              value={formValues.startDate}
+              onChange={handleChange}
+              required={true}
+            />
+            <FormGroup
+              label="End Date:"
+              type="date"
+              id="endDate"
+              value={formValues.endDate}
+              onChange={handleChange}
+              required={!formValues.stillHere}
+              disabled={formValues.stillHere}
+            />
+            <FormGroup
+              label="Still Here:"
+              type="checkbox"
+              id="stillHere"
+              checked={formValues.stillHere}
+              onChange={handleChange}
+            />
+          </div>
           <FormGroup
             label="Description:"
             type="text"
@@ -46,7 +72,6 @@ function Experience({ type, educationDetails, setEducationDetails }) {
             onChange={handleChange}
             required={true}
           />
-          {/* Add more form groups for educational experience */}
         </>
       );
       break;
@@ -69,6 +94,32 @@ function Experience({ type, educationDetails, setEducationDetails }) {
             onChange={handleChange}
             required={true}
           />
+          <div className="dates-container flex gap-4">
+            <FormGroup
+              label="Start Date:"
+              type="date"
+              id="startDate"
+              value={formValues.startDate}
+              onChange={handleChange}
+              required={true}
+            />
+            <FormGroup
+              label="End Date:"
+              type="date"
+              id="endDate"
+              value={formValues.endDate}
+              onChange={handleChange}
+              required={!formValues.stillHere}
+              disabled={formValues.stillHere}
+            />
+            <FormGroup
+              label="Still Here:"
+              type="checkbox"
+              id="stillHere"
+              checked={formValues.stillHere}
+              onChange={handleChange}
+            />
+          </div>
           <FormGroup
             label="Description:"
             type="text"
@@ -77,7 +128,6 @@ function Experience({ type, educationDetails, setEducationDetails }) {
             onChange={handleChange}
             required={true}
           />
-          {/* Add more form groups for professional experience */}
         </>
       );
       break;
