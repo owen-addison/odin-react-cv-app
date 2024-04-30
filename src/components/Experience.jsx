@@ -12,129 +12,98 @@ function Experience({ type, educationDetails, setEducationDetails }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
     setEducationDetails(formValues);
   };
 
-  let formGroups;
+  const getFormGroups = () => {
+    const commonFormGroups = (
+      <>
+        <div className="dates-container flex flex-col gap-4">
+          <FormGroup
+            label="Start Date:"
+            type="date"
+            id="startDate"
+            value={formValues.startDate}
+            onChange={handleChange}
+            required={true}
+          />
+          <FormGroup
+            label="End Date:"
+            type="date"
+            id="endDate"
+            value={formValues.endDate}
+            onChange={handleChange}
+            required={!formValues.stillHere}
+            disabled={formValues.stillHere}
+          />
+          <FormGroup
+            label="Still Here:"
+            type="checkbox"
+            id="stillHere"
+            checked={formValues.stillHere}
+            onChange={handleChange}
+          />
+        </div>
+        <FormGroup
+          label="Description:"
+          type="text"
+          id="description"
+          value={formValues.description}
+          onChange={handleChange}
+          required={true}
+        />
+      </>
+    );
 
-  switch (type) {
-    case 'Educational':
-      formGroups = (
-        <>
-          <FormGroup
-            label="Institute:"
-            type="text"
-            id="institute"
-            value={formValues.institute}
-            onChange={handleChange}
-            required={true}
-          />
-          <FormGroup
-            label="Area of Study:"
-            type="text"
-            id="study"
-            value={formValues.study}
-            onChange={handleChange}
-            required={true}
-          />
-          <div className="dates-container flex flex-col gap-4">
+    switch (type) {
+      case 'Educational':
+        return (
+          <>
             <FormGroup
-              label="Start Date:"
-              type="date"
-              id="startDate"
-              value={formValues.startDate}
+              label="Institute:"
+              type="text"
+              id="institute"
+              value={formValues.institute}
               onChange={handleChange}
               required={true}
             />
             <FormGroup
-              label="End Date:"
-              type="date"
-              id="endDate"
-              value={formValues.endDate}
+              label="Area of Study:"
+              type="text"
+              id="study"
+              value={formValues.study}
               onChange={handleChange}
-              required={!formValues.stillHere}
-              disabled={formValues.stillHere}
+              required={true}
             />
+            {commonFormGroups}
+          </>
+        );
+      case 'Professional':
+        return (
+          <>
             <FormGroup
-              label="Still Here:"
-              type="checkbox"
-              id="stillHere"
-              checked={formValues.stillHere}
-              onChange={handleChange}
-            />
-          </div>
-          <FormGroup
-            label="Description:"
-            type="text"
-            id="description"
-            value={formValues.description}
-            onChange={handleChange}
-            required={true}
-          />
-        </>
-      );
-      break;
-    case 'Professional':
-      formGroups = (
-        <>
-          <FormGroup
-            label="Company:"
-            type="text"
-            id="company"
-            value={formValues.company}
-            onChange={handleChange}
-            required={true}
-          />
-          <FormGroup
-            label="Position:"
-            type="text"
-            id="position"
-            value={formValues.position}
-            onChange={handleChange}
-            required={true}
-          />
-          <div className="dates-container flex flex-col gap-4">
-            <FormGroup
-              label="Start Date:"
-              type="date"
-              id="startDate"
-              value={formValues.startDate}
+              label="Company:"
+              type="text"
+              id="company"
+              value={formValues.company}
               onChange={handleChange}
               required={true}
             />
             <FormGroup
-              label="End Date:"
-              type="date"
-              id="endDate"
-              value={formValues.endDate}
+              label="Position:"
+              type="text"
+              id="position"
+              value={formValues.position}
               onChange={handleChange}
-              required={!formValues.stillHere}
-              disabled={formValues.stillHere}
+              required={true}
             />
-            <FormGroup
-              label="Still Here:"
-              type="checkbox"
-              id="stillHere"
-              checked={formValues.stillHere}
-              onChange={handleChange}
-            />
-          </div>
-          <FormGroup
-            label="Description:"
-            type="text"
-            id="description"
-            value={formValues.description}
-            onChange={handleChange}
-            required={true}
-          />
-        </>
-      );
-      break;
-    default:
-      formGroups = <div>Invalid type: {type}</div>;
-      break;
-  }
+            {commonFormGroups}
+          </>
+        );
+      default:
+        return <div>Invalid type: {type}</div>;
+    }
+  };
 
   return (
     <div className="experience-container">
@@ -143,7 +112,7 @@ function Experience({ type, educationDetails, setEducationDetails }) {
         onSubmit={handleSubmit}
       >
         <div className="experience-section flex flex-col justify-start gap-2 content-start">
-          {formGroups}
+          {getFormGroups()}
         </div>
         <div className="button-container flex flex-row gap-4 justify-end">
           <div className="submit-container flex flex-row justify-start my-2">
