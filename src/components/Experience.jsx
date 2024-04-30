@@ -2,12 +2,18 @@ import FormGroup from './FormGroup';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 
-function Experience({ type }) {
-  const [formValues, setFormValues] = useState({});
+function Experience({ type, educationDetails, setEducationDetails }) {
+  const [formValues, setFormValues] = useState({ ...educationDetails });
 
   const handleChange = (event) => {
     const { id, value } = event.target;
     setFormValues((prevState) => ({ ...prevState, [id]: value }));
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    setEducationDetails(formValues);
   };
 
   let formGroups;
@@ -29,6 +35,14 @@ function Experience({ type }) {
             type="text"
             id="study"
             value={formValues.study}
+            onChange={handleChange}
+            required={true}
+          />
+          <FormGroup
+            label="Description:"
+            type="text"
+            id="description"
+            value={formValues.description}
             onChange={handleChange}
             required={true}
           />
@@ -55,6 +69,14 @@ function Experience({ type }) {
             onChange={handleChange}
             required={true}
           />
+          <FormGroup
+            label="Description:"
+            type="text"
+            id="description"
+            value={formValues.description}
+            onChange={handleChange}
+            required={true}
+          />
           {/* Add more form groups for professional experience */}
         </>
       );
@@ -64,11 +86,38 @@ function Experience({ type }) {
       break;
   }
 
-  return <div className="experience-section flex flex-row">{formGroups}</div>;
+  return (
+    <div className="experience-container">
+      <form
+        className="flex flex-col justify-start gap-2 content-start"
+        onSubmit={handleSubmit}
+      >
+        <div className="experience-section flex flex-row justify-start gap-2 content-center">
+          {formGroups}
+        </div>
+        <div className="submit-container flex flex-row justify-start my-2">
+          <button type="submit" className="submit-button">
+            SUBMIT
+          </button>
+        </div>
+        <div className="remove-container flex flex-row justify-start my-2">
+          <button type="remove" className="remove-button">
+            REMOVE
+          </button>
+        </div>
+      </form>
+    </div>
+  );
 }
 
 Experience.propTypes = {
   type: PropTypes.string.isRequired,
+  educationDetails: PropTypes.shape({
+    institute: PropTypes.string,
+    study: PropTypes.string,
+    description: PropTypes.string,
+  }).isRequired,
+  setEducationDetails: PropTypes.func.isRequired,
 };
 
 export default Experience;
