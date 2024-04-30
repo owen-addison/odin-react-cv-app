@@ -27,15 +27,16 @@ function Experience({ type, educationDetails, setEducationDetails }) {
             onChange={handleChange}
             required={true}
           />
-          <FormGroup
-            label="End Date:"
-            type="date"
-            id="endDate"
-            value={formValues.endDate}
-            onChange={handleChange}
-            required={!formValues.stillHere}
-            disabled={formValues.stillHere}
-          />
+          {!formValues.stillHere && (
+            <FormGroup
+              label="End Date:"
+              type="date"
+              id="endDate"
+              value={formValues.endDate}
+              onChange={handleChange}
+              required={true}
+            />
+          )}
           <FormGroup
             label="Still Here:"
             type="checkbox"
