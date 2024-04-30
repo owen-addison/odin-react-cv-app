@@ -1,4 +1,5 @@
 import Experience from './Experience';
+import uniqid from 'uniqid';
 import { useState } from 'react';
 
 function Educational() {
@@ -6,10 +7,17 @@ function Educational() {
 
   // Function to add a new experience section
   const handleAddExperience = () => {
-    setExperienceSections((prevSections) => [
-      ...prevSections,
-      { id: Math.random().toString(36).substr(2, 9) }, // Generate a unique ID for each section
-    ]);
+    const newSection = {
+      id: uniqid(), // Generate a unique ID
+      institute: '',
+      study: '',
+      startDate: '',
+      endDate: '',
+      stillHere: false,
+      description: '',
+    };
+
+    setExperienceSections([...experienceSections, newSection]);
   };
 
   return (
@@ -32,7 +40,7 @@ function Educational() {
         ))}
         <div className="add-experience-container">
           <button type="button" onClick={handleAddExperience}>
-            Add Experience
+            + experience
           </button>
         </div>
       </div>
