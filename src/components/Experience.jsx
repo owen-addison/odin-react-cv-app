@@ -1,9 +1,29 @@
 import FormGroup from './FormGroup';
 import PropTypes from 'prop-types';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function Experience({ type, educationDetails, setEducationDetails }) {
   const [formValues, setFormValues] = useState({ ...educationDetails });
+  const [prevEndDate, setPrevEndDate] = useState(''); // New state variable for storing previous endDate value
+
+  useEffect(() => {
+    console.log(`Previous end date: ${prevEndDate}`);
+    console.log(`New end date: ${formValues.endDate}`);
+    // Update prevEndDate whenever formValues.endDate or formValues.stillHere changes
+    if (formValues.stillHere) {
+      setPrevEndDate(formValues.endDate);
+      setFormValues((prevState) => ({
+        ...prevState,
+        endDate: 'present', // Set endDate to 'present' when stillHere is true
+      }));
+    } else {
+      // When stillHere is false, restore the previous endDate value
+      setFormValues((prevState) => ({
+        ...prevState,
+        endDate: prevEndDate || '',
+      }));
+    }
+  }, [formValues.endDate, formValues.stillHere]);
 
   const handleChange = (event) => {
     const { id, value, type } = event.target;
