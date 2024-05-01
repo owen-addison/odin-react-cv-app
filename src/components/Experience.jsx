@@ -9,27 +9,22 @@ function Experience({ type, educationDetails, setEducationDetails }) {
   );
 
   useEffect(() => {
-    // Check if stillHere has changed
-    if (formValues.stillHere !== (educationDetails.stillHere || false)) {
-      console.log('stillHere has changed!');
-      if (formValues.stillHere) {
-        console.log(`Previous end date: ${prevEndDate}`);
-        console.log(`New end date: present`);
-        setPrevEndDate(formValues.endDate);
-        setFormValues((prevState) => ({
-          ...prevState,
-          endDate: 'present',
-        }));
-      } else {
-        console.log(`Previous end date: present`);
-        console.log(`New end date: ${prevEndDate}`);
-        setFormValues((prevState) => ({
-          ...prevState,
-          endDate: prevEndDate || '',
-        }));
-      }
+    if (formValues.stillHere) {
+      console.log(`Previous end date: ${prevEndDate}`);
+      console.log(`New end date: present`);
+      setFormValues((prevState) => ({
+        ...prevState,
+        endDate: 'present',
+      }));
+    } else {
+      console.log(`Previous end date: present`);
+      console.log(`New end date: ${prevEndDate}`);
+      setFormValues((prevState) => ({
+        ...prevState,
+        endDate: prevEndDate,
+      }));
     }
-  }, [formValues.stillHere, educationDetails.stillHere]);
+  }, [formValues.stillHere, prevEndDate]);
 
   const handleChange = (event) => {
     const { id, value, type } = event.target;
