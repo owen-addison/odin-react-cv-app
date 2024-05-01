@@ -4,33 +4,45 @@ import { useState, useEffect } from 'react';
 
 function Experience({ type, educationDetails, setEducationDetails }) {
   const [formValues, setFormValues] = useState({ ...educationDetails });
-  const [prevEndDate, setPrevEndDate] = useState(''); // New state variable for storing previous endDate value
+  const [prevEndDate, setPrevEndDate] = useState(
+    educationDetails.endDate || '',
+  );
 
   useEffect(() => {
-    console.log(`Previous end date: ${prevEndDate}`);
-    console.log(`New end date: ${formValues.endDate}`);
-    // Update prevEndDate whenever formValues.endDate or formValues.stillHere changes
-    if (formValues.stillHere) {
-      setPrevEndDate(formValues.endDate);
-      setFormValues((prevState) => ({
-        ...prevState,
-        endDate: 'present', // Set endDate to 'present' when stillHere is true
-      }));
-    } else {
-      // When stillHere is false, restore the previous endDate value
-      setFormValues((prevState) => ({
-        ...prevState,
-        endDate: prevEndDate || '',
-      }));
+    // Check if stillHere has changed
+    if (formValues.stillHere !== (educationDetails.stillHere || false)) {
+      console.log('stillHere has changed!');
+      if (formValues.stillHere) {
+        console.log(`Previous end date: ${prevEndDate}`);
+        console.log(`New end date: present`);
+        setPrevEndDate(formValues.endDate);
+        setFormValues((prevState) => ({
+          ...prevState,
+          endDate: 'present',
+        }));
+      } else {
+        console.log(`Previous end date: present`);
+        console.log(`New end date: ${prevEndDate}`);
+        setFormValues((prevState) => ({
+          ...prevState,
+          endDate: prevEndDate || '',
+        }));
+      }
     }
-  }, [formValues.endDate, formValues.stillHere]);
+  }, [formValues.stillHere, educationDetails.stillHere]);
 
   const handleChange = (event) => {
     const { id, value, type } = event.target;
+    console.log(
+      `handleChange function: event.target.id = ${id}; event.target.value = ${value}; event.target.type = ${type}`,
+    );
     setFormValues((prevState) => ({
       ...prevState,
       [id]: type === 'checkbox' ? event.target.checked : value,
     }));
+    if (id === 'endDate') {
+      setPrevEndDate(value);
+    }
   };
 
   const handleSubmit = (event) => {
@@ -162,6 +174,8 @@ Experience.propTypes = {
     institute: PropTypes.string,
     study: PropTypes.string,
     description: PropTypes.string,
+    endDate: PropTypes.string,
+    stillHere: PropTypes.bool,
   }).isRequired,
   setEducationDetails: PropTypes.func.isRequired,
 };
