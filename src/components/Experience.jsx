@@ -10,15 +10,11 @@ function Experience({ type, educationDetails, setEducationDetails }) {
 
   useEffect(() => {
     if (formValues.stillHere) {
-      console.log(`Previous end date: ${prevEndDate}`);
-      console.log(`New end date: present`);
       setFormValues((prevState) => ({
         ...prevState,
         endDate: new Date().toISOString().slice(0, 10),
       }));
     } else {
-      console.log(`Previous end date: present`);
-      console.log(`New end date: ${prevEndDate}`);
       setFormValues((prevState) => ({
         ...prevState,
         endDate: prevEndDate,
@@ -28,9 +24,6 @@ function Experience({ type, educationDetails, setEducationDetails }) {
 
   const handleChange = (event) => {
     const { id, value, type } = event.target;
-    console.log(
-      `handleChange function: event.target.id = ${id}; event.target.value = ${value}; event.target.type = ${type}`,
-    );
     setFormValues((prevState) => ({
       ...prevState,
       [id]: type === 'checkbox' ? event.target.checked : value,
