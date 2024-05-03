@@ -14,7 +14,7 @@ function Experience({ type, educationDetails, setEducationDetails }) {
       console.log(`New end date: present`);
       setFormValues((prevState) => ({
         ...prevState,
-        endDate: 'present',
+        endDate: new Date().toISOString().slice(0, 10),
       }));
     } else {
       console.log(`Previous end date: present`);
@@ -57,17 +57,20 @@ function Experience({ type, educationDetails, setEducationDetails }) {
             onChange={handleChange}
             required={true}
           />
-          {formValues.stillHere ? null : (
-            <FormGroup
-              label="End Date:"
-              type="date"
-              id="endDate"
-              value={formValues.endDate}
-              onChange={handleChange}
-              required={!formValues.stillHere}
-              disabled={formValues.stillHere}
-            />
-          )}
+          <FormGroup
+            label="End Date:"
+            type="date"
+            id="endDate"
+            value={
+              formValues.stillHere
+                ? new Date().toISOString().slice(0, 10)
+                : formValues.endDate
+            }
+            onChange={handleChange}
+            required={!formValues.stillHere}
+            disabled={formValues.stillHere}
+            className={formValues.stillHere ? 'disabled-input' : ''}
+          />
           <FormGroup
             label="Still Here:"
             type="checkbox"

@@ -8,6 +8,8 @@ function FormGroup({
   placeholder,
   required,
   onChange,
+  disabled,
+  className,
 }) {
   return (
     <div className="form-group grid grid-cols-[1fr,3fr] gap-4 justify-items-start items-start">
@@ -21,7 +23,8 @@ function FormGroup({
           placeholder={placeholder}
           required={required}
           onChange={onChange}
-          className="input-class"
+          disabled={disabled}
+          className={`input-class ${className}`}
         />
       ) : (
         <textarea
@@ -45,6 +48,8 @@ FormGroup.propTypes = {
   onChange: PropTypes.func.isRequired,
   placeholder: PropTypes.string,
   required: PropTypes.bool,
+  disabled: PropTypes.bool,
+  className: PropTypes.string,
 };
 
 export default FormGroup;

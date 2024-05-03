@@ -39,6 +39,12 @@ body {
   @apply w-full;
 }
 
+.disabled-input {
+  background-color: #f0f0f0;
+  color: #888;
+  cursor: not-allowed;
+}
+
 .submit-button {
   @apply w-min border-solid rounded-xl border-2 px-4 py-1 tracking-widest;
   background-color: rgba(255, 255, 255, 0.87);
