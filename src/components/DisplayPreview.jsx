@@ -18,12 +18,12 @@ function DisplayPreview({
                 >
                   {personalDetails.name}
                 </h1>
-                <p id="about" className="text-base">
+                <p id="about" className="text-sm max-w-xl">
                   {personalDetails.about}
                 </p>
               </div>
               <div className="header-right">
-                <ul className="contact-list text-end text-sm">
+                <ul className="contact-list text-end text-xs space-y-1">
                   <li id="email">{personalDetails.email}</li>
                   <li id="phone-number">{personalDetails.telephone}</li>
                   <li id="website">{personalDetails.website}</li>
