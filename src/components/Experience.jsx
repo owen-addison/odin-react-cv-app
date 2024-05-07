@@ -179,6 +179,7 @@ Experience.propTypes = {
     description: PropTypes.string,
     endDate: PropTypes.string,
     stillHere: PropTypes.bool,
+    complete: PropTypes.bool,
   }).isRequired,
   setExperienceDetails: PropTypes.func.isRequired,
   onRemove: PropTypes.func.isRequired,
