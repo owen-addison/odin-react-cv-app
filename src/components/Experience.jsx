@@ -85,13 +85,12 @@ function Experience({
           />
         </div>
         <FormGroup
-          label="Description:"
+          label="Details:"
           type="textarea"
           id="description"
           value={formValues.description}
           onChange={handleChange}
           required={true}
-          className={'flex-col'}
         />
       </>
     );
