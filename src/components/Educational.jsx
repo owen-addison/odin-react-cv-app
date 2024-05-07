@@ -27,8 +27,8 @@ function Educational() {
           <Experience
             key={section.id}
             type="Educational"
-            educationDetails={section} // Pass the section details as educationDetails
-            setEducationDetails={(newDetails) => {
+            experienceDetails={section} // Pass the section details as experienceDetails
+            setExperienceDetails={(newDetails) => {
               // Update the specific section details in the state
               setExperienceSections((prevSections) =>
                 prevSections.map((prevSection) =>

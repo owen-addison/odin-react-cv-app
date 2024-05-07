@@ -2,10 +2,10 @@ import FormGroup from './FormGroup';
 import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
 
-function Experience({ type, educationDetails, setEducationDetails }) {
-  const [formValues, setFormValues] = useState({ ...educationDetails });
+function Experience({ type, experienceDetails, setExperienceDetails }) {
+  const [formValues, setFormValues] = useState({ ...experienceDetails });
   const [prevEndDate, setPrevEndDate] = useState(
-    educationDetails.endDate || '',
+    experienceDetails.endDate || '',
   );
 
   useEffect(() => {
@@ -35,7 +35,7 @@ function Experience({ type, educationDetails, setEducationDetails }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setEducationDetails(formValues);
+    setExperienceDetails(formValues);
   };
 
   const getFormGroups = () => {
@@ -161,14 +161,14 @@ function Experience({ type, educationDetails, setEducationDetails }) {
 
 Experience.propTypes = {
   type: PropTypes.string.isRequired,
-  educationDetails: PropTypes.shape({
+  experienceDetails: PropTypes.shape({
     institute: PropTypes.string,
     study: PropTypes.string,
     description: PropTypes.string,
     endDate: PropTypes.string,
     stillHere: PropTypes.bool,
   }).isRequired,
-  setEducationDetails: PropTypes.func.isRequired,
+  setExperienceDetails: PropTypes.func.isRequired,
 };
 
 export default Experience;
