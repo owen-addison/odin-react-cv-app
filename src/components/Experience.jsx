@@ -81,15 +81,17 @@ function Experience({
             id="stillHere"
             checked={formValues.stillHere}
             onChange={handleChange}
+            className={'self-center'}
           />
         </div>
         <FormGroup
           label="Description:"
-          type="text"
+          type="textarea"
           id="description"
           value={formValues.description}
           onChange={handleChange}
           required={true}
+          className={'flex-col'}
         />
       </>
     );

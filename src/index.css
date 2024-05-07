@@ -37,6 +37,7 @@ body {
 
 .textarea-class {
   @apply w-full;
+  @apply h-32;
 }
 
 .disabled-input {

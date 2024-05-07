@@ -12,7 +12,7 @@ function FormGroup({
   className,
 }) {
   return (
-    <div className="form-group grid grid-cols-[1fr,3fr] gap-4 justify-items-start items-start">
+    <div className="form-group grid grid-cols-[1fr,3fr] gap-4 justify-items-start items-start text-start text-sm">
       <label htmlFor={id}>{label}</label>
       {type !== 'textarea' ? (
         <input
@@ -32,7 +32,7 @@ function FormGroup({
           name={id}
           required={required}
           onChange={onChange}
-          className="textarea-class"
+          className={`textarea-class ${className}`}
           placeholder={placeholder}
         ></textarea>
       )}
