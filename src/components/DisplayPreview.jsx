@@ -9,19 +9,26 @@ function DisplayPreview({
     <>
       <div id="cv-container" className="mx-10">
         <div id="cv" className="w-a4 h-a4 bg-white text-slate-800">
-          <div className="personal-section">
-            <div className="container">
-              <h1 id="name">{personalDetails.name}</h1>
-            </div>
-            <div className="container">
-              <ul className="contact-list">
-                <li id="email">{personalDetails.email}</li>
-                <li id="phone-number">{personalDetails.telephone}</li>
-                <li id="website">{personalDetails.website}</li>
-              </ul>
-            </div>
-            <div className="container">
-              <p id="about">{personalDetails.about}</p>
+          <div className="personal-section px-6 py-4 bg-gray-200">
+            <div className="header flex flex-row justify-between">
+              <div className="header-left text-start">
+                <h1
+                  id="name"
+                  className="font-semibold text-xl tracking-widest mb-1"
+                >
+                  {personalDetails.name}
+                </h1>
+                <p id="about" className="text-base">
+                  {personalDetails.about}
+                </p>
+              </div>
+              <div className="header-right">
+                <ul className="contact-list text-end text-sm">
+                  <li id="email">{personalDetails.email}</li>
+                  <li id="phone-number">{personalDetails.telephone}</li>
+                  <li id="website">{personalDetails.website}</li>
+                </ul>
+              </div>
             </div>
           </div>
           <div className="education-section">
