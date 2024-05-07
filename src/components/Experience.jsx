@@ -43,11 +43,10 @@ function Experience({
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setFormValues((prevState) => ({
-      ...prevState,
+    setExperienceDetails({
+      ...formValues,
       complete: true,
-    }));
-    setExperienceDetails(formValues);
+    });
   };
 
   const getFormGroups = () => {
