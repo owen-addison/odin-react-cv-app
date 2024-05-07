@@ -35,6 +35,13 @@ function Educational({ educationalSections, setEducationalSections }) {
                 ),
               );
             }}
+            onRemove={() => {
+              setEducationalSections((prevSections) =>
+                prevSections.filter(
+                  (prevSection) => prevSection.id !== section.id,
+                ),
+              );
+            }}
           />
         ))}
         <div className="add-experience-container">

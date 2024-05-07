@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-function DisplayPreview({ personalDetails }) {
+function DisplayPreview({ personalDetails, educationalSections }) {
   return (
     <>
       <div id="cv-container" className="mx-10">
@@ -20,6 +20,31 @@ function DisplayPreview({ personalDetails }) {
               <p id="about">{personalDetails.about}</p>
             </div>
           </div>
+          <div className="education-section">
+            {educationalSections.map((section) => (
+              <div className="experience-section" key={section.id}>
+                <div className="container">
+                  <h3 className="font-semibold">Institution:</h3>
+                  <p className="institution">{section.institute}</p>
+                </div>
+                <div className="container">
+                  <h3 className="font-semibold">Study:</h3>
+                  <p className="study">{section.study}</p>
+                </div>
+                <div className="container">
+                  <h3 className="font-semibold">Dates:</h3>
+                  <p className="dates">
+                    {section.startDate} -{' '}
+                    {section.stillHere ? `present` : section.endDate}
+                  </p>
+                </div>
+                <div className="container">
+                  <h3 className="font-semibold">Description:</h3>
+                  <p className="description">{section.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </>
@@ -34,6 +59,7 @@ DisplayPreview.propTypes = {
     website: PropTypes.string,
     about: PropTypes.string,
   }).isRequired,
+  educationalSections: PropTypes.array,
 };
 
 export default DisplayPreview;

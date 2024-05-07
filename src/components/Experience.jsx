@@ -2,7 +2,12 @@ import FormGroup from './FormGroup';
 import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
 
-function Experience({ type, experienceDetails, setExperienceDetails }) {
+function Experience({
+  type,
+  experienceDetails,
+  setExperienceDetails,
+  onRemove,
+}) {
   const [formValues, setFormValues] = useState({ ...experienceDetails });
   const [prevEndDate, setPrevEndDate] = useState(
     experienceDetails.endDate || '',
@@ -149,7 +154,7 @@ function Experience({ type, experienceDetails, setExperienceDetails }) {
             </button>
           </div>
           <div className="remove-container flex flex-row justify-start my-2">
-            <button type="remove" className="remove-button">
+            <button type="remove" className="remove-button" onClick={onRemove}>
               REMOVE
             </button>
           </div>
@@ -169,6 +174,7 @@ Experience.propTypes = {
     stillHere: PropTypes.bool,
   }).isRequired,
   setExperienceDetails: PropTypes.func.isRequired,
+  onRemove: PropTypes.func.isRequired,
 };
 
 export default Experience;
