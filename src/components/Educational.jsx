@@ -3,7 +3,7 @@ import uniqid from 'uniqid';
 import { useState } from 'react';
 
 function Educational() {
-  const [experienceSections, setExperienceSections] = useState([]);
+  const [educationalSections, setEducationalSections] = useState([]);
 
   // Function to add a new experience section
   const handleAddExperience = () => {
@@ -17,20 +17,20 @@ function Educational() {
       description: '',
     };
 
-    setExperienceSections([...experienceSections, newSection]);
+    setEducationalSections([...educationalSections, newSection]);
   };
 
   return (
     <>
       <div className="educational-container">
-        {experienceSections.map((section) => (
+        {educationalSections.map((section) => (
           <Experience
             key={section.id}
             type="Educational"
             experienceDetails={section} // Pass the section details as experienceDetails
             setExperienceDetails={(newDetails) => {
               // Update the specific section details in the state
-              setExperienceSections((prevSections) =>
+              setEducationalSections((prevSections) =>
                 prevSections.map((prevSection) =>
                   prevSection.id === section.id ? newDetails : prevSection,
                 ),
