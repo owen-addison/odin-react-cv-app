@@ -11,6 +11,7 @@ function CVBuilder() {
     about: 'Brief introduction of yourself and your motivations...',
   });
   const [educationalSections, setEducationalSections] = useState([]);
+  const [professionalSections, setProfessionalSections] = useState([]);
 
   return (
     <>
@@ -19,6 +20,8 @@ function CVBuilder() {
         setPersonalDetails={setPersonalDetails}
         educationalSections={educationalSections}
         setEducationalSections={setEducationalSections}
+        professionalSections={professionalSections}
+        setProfessionalSections={setProfessionalSections}
       />
       <DisplayPreview
         personalDetails={personalDetails}

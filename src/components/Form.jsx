@@ -1,5 +1,6 @@
 import Personal from './Personal';
 import Educational from './Educational';
+import Professional from './Professional';
 import PropTypes from 'prop-types';
 
 function Form({
@@ -7,6 +8,8 @@ function Form({
   setPersonalDetails,
   educationalSections,
   setEducationalSections,
+  professionalSections,
+  setProfessionalSections,
 }) {
   // Function to update personal details when the form is submitted
   const handlePersonalDetailsSubmit = (newDetails) => {
@@ -24,6 +27,10 @@ function Form({
           educationalSections={educationalSections}
           setEducationalSections={setEducationalSections}
         />
+        <Professional
+          professionalSections={professionalSections}
+          setProfessionalSections={setProfessionalSections}
+        />
       </div>
     </>
   );
@@ -40,6 +47,8 @@ Form.propTypes = {
   setPersonalDetails: PropTypes.func.isRequired,
   educationalSections: PropTypes.array,
   setEducationalSections: PropTypes.func.isRequired,
+  professionalSections: PropTypes.array,
+  setProfessionalSections: PropTypes.func.isRequired,
 };
 
 export default Form;
