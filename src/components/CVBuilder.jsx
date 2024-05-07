@@ -20,7 +20,10 @@ function CVBuilder() {
         educationalSections={educationalSections}
         setEducationalSections={setEducationalSections}
       />
-      <DisplayPreview personalDetails={personalDetails} />
+      <DisplayPreview
+        personalDetails={personalDetails}
+        educationalSections={educationalSections}
+      />
     </>
   );
 }
