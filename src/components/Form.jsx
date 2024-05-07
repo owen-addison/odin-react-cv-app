@@ -2,7 +2,12 @@ import Personal from './Personal';
 import Educational from './Educational';
 import PropTypes from 'prop-types';
 
-function Form({ personalDetails, setPersonalDetails }) {
+function Form({
+  personalDetails,
+  setPersonalDetails,
+  educationalSections,
+  setEducationalSections,
+}) {
   // Function to update personal details when the form is submitted
   const handlePersonalDetailsSubmit = (newDetails) => {
     setPersonalDetails(newDetails);
@@ -15,7 +20,10 @@ function Form({ personalDetails, setPersonalDetails }) {
           personalDetails={personalDetails}
           setPersonalDetails={handlePersonalDetailsSubmit}
         />
-        <Educational />
+        <Educational
+          educationalSections={educationalSections}
+          setEducationalSections={setEducationalSections}
+        />
       </div>
     </>
   );
@@ -30,6 +38,8 @@ Form.propTypes = {
     about: PropTypes.string,
   }).isRequired,
   setPersonalDetails: PropTypes.func.isRequired,
+  educationalSections: PropTypes.array,
+  setEducationalSections: PropTypes.func.isRequired,
 };
 
 export default Form;

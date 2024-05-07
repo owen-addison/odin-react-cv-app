@@ -1,10 +1,9 @@
 import Experience from './Experience';
 import uniqid from 'uniqid';
-import { useState } from 'react';
+import PropTypes from 'prop-types';
+// import { useState } from 'react';
 
-function Educational() {
-  const [educationalSections, setEducationalSections] = useState([]);
-
+function Educational({ educationalSections, setEducationalSections }) {
   // Function to add a new experience section
   const handleAddExperience = () => {
     const newSection = {
@@ -47,5 +46,10 @@ function Educational() {
     </>
   );
 }
+
+Educational.propTypes = {
+  educationalSections: PropTypes.array.isRequired,
+  setEducationalSections: PropTypes.func.isRequired,
+};
 
 export default Educational;

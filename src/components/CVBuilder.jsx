@@ -10,12 +10,15 @@ function CVBuilder() {
     website: 'www.john-d-smith.me',
     about: 'Brief introduction of yourself and your motivations...',
   });
+  const [educationalSections, setEducationalSections] = useState([]);
 
   return (
     <>
       <Form
         personalDetails={personalDetails}
         setPersonalDetails={setPersonalDetails}
+        educationalSections={educationalSections}
+        setEducationalSections={setEducationalSections}
       />
       <DisplayPreview personalDetails={personalDetails} />
     </>
