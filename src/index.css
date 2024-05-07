@@ -47,7 +47,7 @@ body {
 }
 
 .submit-button {
-  @apply w-min border-solid rounded-xl border-2 px-4 py-1 tracking-widest;
+  @apply w-min border-solid rounded-2xl px-5 py-2 tracking-widest text-xs;
   background-color: rgba(255, 255, 255, 0.87);
   border-color: rgba(255, 255, 255, 0.87);
   color: #333333;
@@ -60,7 +60,7 @@ body {
 }
 
 .remove-button {
-  @apply w-min border-solid rounded-xl border-2 px-4 py-1 tracking-widest;
+  @apply w-min border-solid rounded-2xl px-5 py-1 tracking-widest text-xs;
   background-color: rgba(255, 255, 255, 0.87);
   border-color: rgba(255, 255, 255, 0.87);
   color: #333333;
