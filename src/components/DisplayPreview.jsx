@@ -1,6 +1,10 @@
 import PropTypes from 'prop-types';
 
-function DisplayPreview({ personalDetails, educationalSections }) {
+function DisplayPreview({
+  personalDetails,
+  educationalSections,
+  professionalSections,
+}) {
   return (
     <>
       <div id="cv-container" className="mx-10">
@@ -51,6 +55,37 @@ function DisplayPreview({ personalDetails, educationalSections }) {
                 </div>
               ))}
           </div>
+          <div className="professional-section">
+            {professionalSections
+              .filter(
+                (section) =>
+                  section.complete &&
+                  Object.values(section).some((value) => value),
+              )
+              .map((section) => (
+                <div className="experience-section" key={section.id}>
+                  <div className="container">
+                    <h3 className="font-semibold">Company:</h3>
+                    <p className="company">{section.company}</p>
+                  </div>
+                  <div className="container">
+                    <h3 className="font-semibold">Position:</h3>
+                    <p className="position">{section.position}</p>
+                  </div>
+                  <div className="container">
+                    <h3 className="font-semibold">Dates:</h3>
+                    <p className="dates">
+                      {section.startDate} -{' '}
+                      {section.stillHere ? `present` : section.endDate}
+                    </p>
+                  </div>
+                  <div className="container">
+                    <h3 className="font-semibold">Description:</h3>
+                    <p className="description">{section.description}</p>
+                  </div>
+                </div>
+              ))}
+          </div>
         </div>
       </div>
     </>
@@ -66,6 +101,7 @@ DisplayPreview.propTypes = {
     about: PropTypes.string,
   }).isRequired,
   educationalSections: PropTypes.array,
+  professionalSections: PropTypes.array,
 };
 
 export default DisplayPreview;

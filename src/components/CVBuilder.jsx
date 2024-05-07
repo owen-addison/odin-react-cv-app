@@ -26,6 +26,7 @@ function CVBuilder() {
       <DisplayPreview
         personalDetails={personalDetails}
         educationalSections={educationalSections}
+        professionalSections={professionalSections}
       />
     </>
   );
