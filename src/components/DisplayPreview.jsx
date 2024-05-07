@@ -21,29 +21,35 @@ function DisplayPreview({ personalDetails, educationalSections }) {
             </div>
           </div>
           <div className="education-section">
-            {educationalSections.map((section) => (
-              <div className="experience-section" key={section.id}>
-                <div className="container">
-                  <h3 className="font-semibold">Institution:</h3>
-                  <p className="institution">{section.institute}</p>
+            {educationalSections
+              .filter(
+                (section) =>
+                  section.complete &&
+                  Object.values(section).some((value) => value),
+              )
+              .map((section) => (
+                <div className="experience-section" key={section.id}>
+                  <div className="container">
+                    <h3 className="font-semibold">Institution:</h3>
+                    <p className="institution">{section.institute}</p>
+                  </div>
+                  <div className="container">
+                    <h3 className="font-semibold">Study:</h3>
+                    <p className="study">{section.study}</p>
+                  </div>
+                  <div className="container">
+                    <h3 className="font-semibold">Dates:</h3>
+                    <p className="dates">
+                      {section.startDate} -{' '}
+                      {section.stillHere ? `present` : section.endDate}
+                    </p>
+                  </div>
+                  <div className="container">
+                    <h3 className="font-semibold">Description:</h3>
+                    <p className="description">{section.description}</p>
+                  </div>
                 </div>
-                <div className="container">
-                  <h3 className="font-semibold">Study:</h3>
-                  <p className="study">{section.study}</p>
-                </div>
-                <div className="container">
-                  <h3 className="font-semibold">Dates:</h3>
-                  <p className="dates">
-                    {section.startDate} -{' '}
-                    {section.stillHere ? `present` : section.endDate}
-                  </p>
-                </div>
-                <div className="container">
-                  <h3 className="font-semibold">Description:</h3>
-                  <p className="description">{section.description}</p>
-                </div>
-              </div>
-            ))}
+              ))}
           </div>
         </div>
       </div>

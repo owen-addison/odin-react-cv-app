@@ -8,7 +8,10 @@ function Experience({
   setExperienceDetails,
   onRemove,
 }) {
-  const [formValues, setFormValues] = useState({ ...experienceDetails });
+  const [formValues, setFormValues] = useState({
+    ...experienceDetails,
+    complete: experienceDetails.complete || false,
+  });
   const [prevEndDate, setPrevEndDate] = useState(
     experienceDetails.endDate || '',
   );
@@ -40,6 +43,10 @@ function Experience({
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    setFormValues((prevState) => ({
+      ...prevState,
+      complete: true,
+    }));
     setExperienceDetails(formValues);
   };
 

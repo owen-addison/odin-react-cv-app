@@ -14,6 +14,7 @@ function Educational({ educationalSections, setEducationalSections }) {
       endDate: '',
       stillHere: false,
       description: '',
+      complete: false,
     };
 
     setEducationalSections([...educationalSections, newSection]);
@@ -26,7 +27,10 @@ function Educational({ educationalSections, setEducationalSections }) {
           <Experience
             key={section.id}
             type="Educational"
-            experienceDetails={section} // Pass the section details as experienceDetails
+            experienceDetails={{
+              ...section,
+              complete: section.complete || false,
+            }}
             setExperienceDetails={(newDetails) => {
               // Update the specific section details in the state
               setEducationalSections((prevSections) =>
