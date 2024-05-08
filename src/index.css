@@ -46,6 +46,10 @@ body {
   cursor: not-allowed;
 }
 
+button {
+  @apply mb-2;
+}
+
 .submit-button {
   @apply w-min border-solid rounded-2xl px-5 py-2 tracking-widest text-xs;
   background-color: rgba(255, 255, 255, 0.87);
@@ -67,7 +71,7 @@ body {
 }
 
 .remove-button:hover {
-  background-color: #eeff00;
-  color: #333333;
-  border-color: #eeff00;
+  background-color: rgb(120, 120, 120);
+  color: rgba(255, 255, 255, 0.87);
+  border-color: rgb(120, 120, 120);
 }
