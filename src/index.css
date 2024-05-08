@@ -50,8 +50,14 @@ button {
   @apply mb-2;
 }
 
-.personal-title-container {
-  /* transform: rotate(45deg); */
+.form-title-container {
+  @apply flex justify-end items-end rotate-180 mr-4;
+}
+
+.form-section-title {
+  @apply text-xl font-light tracking-widest;
+  writing-mode: vertical-rl;
+  text-orientation: sideways-right;
 }
 
 .submit-button {
