@@ -21,7 +21,10 @@ function Professional({ professionalSections, setProfessionalSections }) {
 
   return (
     <>
-      <div className="professional-container">
+      <div className="professional-container flex">
+        <div className="form-title-container">
+          <span className="form-section-title">Professional Experience</span>
+        </div>
         {professionalSections.map((section) => (
           <Experience
             key={section.id}
