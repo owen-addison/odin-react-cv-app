@@ -32,7 +32,18 @@ function Personal({ personalDetails, setPersonalDetails }) {
 
   return (
     <>
-      <div className="personal-container">
+      <div className="personal-container flex">
+        <div className="form-title-container flex justify-end items-end rotate-180 mr-4">
+          <span
+            className="form-section-title text-xl font-light tracking-widest"
+            style={{
+              writingMode: 'vertical-rl',
+              textOrientation: 'sideways-right',
+            }}
+          >
+            Personal
+          </span>
+        </div>
         <form
           className="flex flex-col justify-start gap-2 content-start"
           onSubmit={handleSubmit}

@@ -50,6 +50,10 @@ button {
   @apply mb-2;
 }
 
+.personal-title-container {
+  /* transform: rotate(45deg); */
+}
+
 .submit-button {
   @apply w-min border-solid rounded-2xl px-5 py-2 tracking-widest text-xs;
   background-color: rgba(255, 255, 255, 0.87);
