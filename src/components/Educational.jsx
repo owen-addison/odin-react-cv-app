@@ -26,35 +26,37 @@ function Educational({ educationalSections, setEducationalSections }) {
         <div className="form-title-container">
           <span className="form-section-title">Educational Experience</span>
         </div>
-        {educationalSections.map((section) => (
-          <Experience
-            key={section.id}
-            type="Educational"
-            experienceDetails={{
-              ...section,
-              complete: section.complete || false,
-            }}
-            setExperienceDetails={(newDetails) => {
-              // Update the specific section details in the state
-              setEducationalSections((prevSections) =>
-                prevSections.map((prevSection) =>
-                  prevSection.id === section.id ? newDetails : prevSection,
-                ),
-              );
-            }}
-            onRemove={() => {
-              setEducationalSections((prevSections) =>
-                prevSections.filter(
-                  (prevSection) => prevSection.id !== section.id,
-                ),
-              );
-            }}
-          />
-        ))}
-        <div className="add-experience-container">
-          <button type="button" onClick={handleAddExperience}>
-            + experience
-          </button>
+        <div className="stack-container flex flex-col flex-grow">
+          {educationalSections.map((section) => (
+            <Experience
+              key={section.id}
+              type="Educational"
+              experienceDetails={{
+                ...section,
+                complete: section.complete || false,
+              }}
+              setExperienceDetails={(newDetails) => {
+                // Update the specific section details in the state
+                setEducationalSections((prevSections) =>
+                  prevSections.map((prevSection) =>
+                    prevSection.id === section.id ? newDetails : prevSection,
+                  ),
+                );
+              }}
+              onRemove={() => {
+                setEducationalSections((prevSections) =>
+                  prevSections.filter(
+                    (prevSection) => prevSection.id !== section.id,
+                  ),
+                );
+              }}
+            />
+          ))}
+          <div className="add-experience-container">
+            <button type="button" onClick={handleAddExperience}>
+              + experience
+            </button>
+          </div>
         </div>
       </div>
     </>

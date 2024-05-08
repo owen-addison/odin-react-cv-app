@@ -25,35 +25,37 @@ function Professional({ professionalSections, setProfessionalSections }) {
         <div className="form-title-container">
           <span className="form-section-title">Professional Experience</span>
         </div>
-        {professionalSections.map((section) => (
-          <Experience
-            key={section.id}
-            type="Professional"
-            experienceDetails={{
-              ...section,
-              complete: section.complete || false,
-            }}
-            setExperienceDetails={(newDetails) => {
-              // Update the specific section details in the state
-              setProfessionalSections((prevSections) =>
-                prevSections.map((prevSection) =>
-                  prevSection.id === section.id ? newDetails : prevSection,
-                ),
-              );
-            }}
-            onRemove={() => {
-              setProfessionalSections((prevSections) =>
-                prevSections.filter(
-                  (prevSection) => prevSection.id !== section.id,
-                ),
-              );
-            }}
-          />
-        ))}
-        <div className="add-experience-container">
-          <button type="button" onClick={handleAddExperience}>
-            + experience
-          </button>
+        <div className="stack-container flex flex-col flex-grow">
+          {professionalSections.map((section) => (
+            <Experience
+              key={section.id}
+              type="Professional"
+              experienceDetails={{
+                ...section,
+                complete: section.complete || false,
+              }}
+              setExperienceDetails={(newDetails) => {
+                // Update the specific section details in the state
+                setProfessionalSections((prevSections) =>
+                  prevSections.map((prevSection) =>
+                    prevSection.id === section.id ? newDetails : prevSection,
+                  ),
+                );
+              }}
+              onRemove={() => {
+                setProfessionalSections((prevSections) =>
+                  prevSections.filter(
+                    (prevSection) => prevSection.id !== section.id,
+                  ),
+                );
+              }}
+            />
+          ))}
+          <div className="add-experience-container">
+            <button type="button" onClick={handleAddExperience}>
+              + experience
+            </button>
+          </div>
         </div>
       </div>
     </>

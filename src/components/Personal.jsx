@@ -37,7 +37,7 @@ function Personal({ personalDetails, setPersonalDetails }) {
           <span className="form-section-title">Personal</span>
         </div>
         <form
-          className="flex flex-col justify-start gap-2 content-start"
+          className="flex flex-col flex-grow justify-start gap-2 content-start"
           onSubmit={handleSubmit}
         >
           <FormGroup
