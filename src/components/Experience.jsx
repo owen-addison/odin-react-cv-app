@@ -155,14 +155,14 @@ function Experience({
           {getFormGroups()}
         </div>
         <div className="button-container flex flex-row gap-4 justify-end">
-          <div className="submit-container flex flex-row justify-start my-2">
-            <button type="submit" className="submit-button">
-              SUBMIT
-            </button>
-          </div>
           <div className="remove-container flex flex-row justify-start my-2">
             <button type="remove" className="remove-button" onClick={onRemove}>
               REMOVE
+            </button>
+          </div>
+          <div className="submit-container flex flex-row justify-start my-2">
+            <button type="submit" className="submit-button">
+              SUBMIT
             </button>
           </div>
         </div>
