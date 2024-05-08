@@ -22,7 +22,10 @@ function Educational({ educationalSections, setEducationalSections }) {
 
   return (
     <>
-      <div className="educational-container">
+      <div className="educational-container flex">
+        <div className="form-title-container">
+          <span className="form-section-title">Educational</span>
+        </div>
         {educationalSections.map((section) => (
           <Experience
             key={section.id}
