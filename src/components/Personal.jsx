@@ -79,7 +79,7 @@ function Personal({ personalDetails, setPersonalDetails }) {
             required={true}
           />
 
-          <div className="submit-container flex flex-row justify-start my-2">
+          <div className="submit-container flex flex-row justify-end my-2">
             <button type="submit" className="submit-button">
               SUBMIT
             </button>
