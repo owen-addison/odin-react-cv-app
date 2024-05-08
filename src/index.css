@@ -50,6 +50,10 @@ button {
   @apply mb-2;
 }
 
+.form-section {
+  @apply flex pb-4 border-b border-solid border-gray-500;
+}
+
 .form-title-container {
   @apply flex justify-end items-end rotate-180 mr-4;
 }

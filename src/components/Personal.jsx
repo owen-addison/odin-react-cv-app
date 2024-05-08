@@ -32,7 +32,7 @@ function Personal({ personalDetails, setPersonalDetails }) {
 
   return (
     <>
-      <div className="personal-container flex">
+      <div className="form-section personal-container flex">
         <div className="form-title-container">
           <span className="form-section-title">Personal</span>
         </div>

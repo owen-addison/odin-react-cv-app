@@ -18,7 +18,7 @@ function Form({
 
   return (
     <>
-      <div className="form-container w-1/3 min-w-96 flex flex-col content-start">
+      <div className="form-container w-1/3 min-w-96 flex flex-col content-start space-y-4">
         <Personal
           personalDetails={personalDetails}
           setPersonalDetails={handlePersonalDetailsSubmit}

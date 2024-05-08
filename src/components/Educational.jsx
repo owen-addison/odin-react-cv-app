@@ -22,7 +22,7 @@ function Educational({ educationalSections, setEducationalSections }) {
 
   return (
     <>
-      <div className="educational-container flex">
+      <div className="form-section educational-container">
         <div className="form-title-container">
           <span className="form-section-title">Educational Experience</span>
         </div>

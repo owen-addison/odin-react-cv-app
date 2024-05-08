@@ -21,7 +21,7 @@ function Professional({ professionalSections, setProfessionalSections }) {
 
   return (
     <>
-      <div className="professional-container flex">
+      <div className="form-section professional-container flex">
         <div className="form-title-container">
           <span className="form-section-title">Professional Experience</span>
         </div>
