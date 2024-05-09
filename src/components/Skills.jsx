@@ -16,6 +16,12 @@ function Skills({ skillsCategories, setSkillsCategories }) {
     setSkillsCategories(formValues);
   };
 
+  const handleRemove = () => {
+    setSkillsCategories((prevCategories) =>
+      prevCategories.filter((category) => category !== formValues),
+    );
+  };
+
   return (
     <div className="form-section skills-container flex">
       <div className="form-title-container">
@@ -43,7 +49,7 @@ function Skills({ skillsCategories, setSkillsCategories }) {
               onChange={handleChange}
               required={true}
             />
-            <ButtonContainer onRemove={() => {}} onSubmit={handleSubmit} />
+            <ButtonContainer onRemove={handleRemove} onSubmit={handleSubmit} />
           </form>
         </div>
       </div>
