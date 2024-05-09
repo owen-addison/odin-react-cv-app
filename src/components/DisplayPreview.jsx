@@ -8,7 +8,7 @@ function DisplayPreview({
 }) {
   return (
     <>
-      <div id="cv-container" className="mx-10">
+      <div id="cv-container" className="mx-10 mb-4">
         <div id="cv" className="w-a4 h-a4 bg-white text-slate-800">
           <div className="personal-section px-6 py-4 bg-gray-200">
             <div className="header flex flex-row justify-between">
