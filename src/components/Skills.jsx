@@ -52,10 +52,7 @@ function Skills({ skillsCategories, setSkillsCategories }) {
 }
 
 Skills.propTypes = {
-  skillsCategories: PropTypes.shape({
-    category: PropTypes.string,
-    skills: PropTypes.string,
-  }).isRequired,
+  skillsCategories: PropTypes.array,
   setSkillsCategories: PropTypes.func.isRequired,
 };
 
