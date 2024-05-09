@@ -30,7 +30,7 @@ function CVBuilder() {
         personalDetails={personalDetails}
         educationalSections={educationalSections}
         professionalSections={professionalSections}
-        skillsCategories={setSkillsCategories}
+        skillsCategories={skillsCategories}
       />
     </>
   );
