@@ -2,9 +2,10 @@ import { useState } from 'react';
 import ButtonContainer from './ButtonContainer';
 import PropTypes from 'prop-types';
 import FormGroup from './FormGroup';
+import uniqid from 'uniqid';
 
-function Skills({ skillsCategories, setSkillsCategories }) {
-  const [formValues, setFormValues] = useState({ ...skillsCategories });
+function Category({ category, onRemove, onSubmit }) {
+  const [formValues, setFormValues] = useState({ ...category });
 
   const handleChange = (event) => {
     const { id, value } = event.target;
@@ -13,12 +14,68 @@ function Skills({ skillsCategories, setSkillsCategories }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setSkillsCategories(formValues);
+    onSubmit(formValues);
   };
 
-  const handleRemove = () => {
+  return (
+    <div className="category-container">
+      <form
+        className="flex flex-col justify-start gap-2 content-start"
+        onSubmit={handleSubmit}
+      >
+        <FormGroup
+          label="Category:"
+          type="text"
+          id="category"
+          value={formValues.category || ''}
+          onChange={handleChange}
+          required={true}
+        />
+        <FormGroup
+          label="Skills:"
+          type="textarea"
+          id="skills"
+          value={formValues.skills || ''}
+          onChange={handleChange}
+          required={true}
+        />
+        <ButtonContainer onRemove={onRemove} onSubmit={handleSubmit} />
+      </form>
+    </div>
+  );
+}
+
+Category.propTypes = {
+  category: PropTypes.shape({
+    id: PropTypes.string,
+    category: PropTypes.string,
+    skills: PropTypes.string,
+  }).isRequired,
+  onRemove: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func.isRequired,
+};
+
+function Skills({ skillsCategories, setSkillsCategories }) {
+  const handleAddCategory = () => {
+    const newCategory = {
+      id: uniqid(),
+      category: '',
+      skills: '',
+    };
+    setSkillsCategories([...skillsCategories, newCategory]);
+  };
+
+  const handleRemoveCategory = (categoryId) => {
     setSkillsCategories((prevCategories) =>
-      prevCategories.filter((category) => category !== formValues),
+      prevCategories.filter((category) => category.id !== categoryId),
+    );
+  };
+
+  const handleSubmitCategory = (updatedCategory) => {
+    setSkillsCategories((prevCategories) =>
+      prevCategories.map((category) =>
+        category.id === updatedCategory.id ? updatedCategory : category,
+      ),
     );
   };
 
@@ -28,37 +85,30 @@ function Skills({ skillsCategories, setSkillsCategories }) {
         <span className="form-section-title">Skills</span>
       </div>
       <div className="stack-container flex flex-col flex-grow">
-        <div className="category-container">
-          <form
-            className="flex flex-col justify-start gap-2 content-start"
-            onSubmit={handleSubmit}
-          >
-            <FormGroup
-              label="Category:"
-              type="text"
-              id="category"
-              value={formValues.category || ''}
-              onChange={handleChange}
-              required={true}
-            />
-            <FormGroup
-              label="Skills:"
-              type="textarea"
-              id="skills"
-              value={formValues.skills || ''}
-              onChange={handleChange}
-              required={true}
-            />
-            <ButtonContainer onRemove={handleRemove} onSubmit={handleSubmit} />
-          </form>
-        </div>
+        {skillsCategories.map((category) => (
+          <Category
+            key={category.id}
+            category={category}
+            onRemove={() => handleRemoveCategory(category.id)}
+            onSubmit={handleSubmitCategory}
+          />
+        ))}
+        <button type="button" onClick={handleAddCategory}>
+          + category
+        </button>
       </div>
     </div>
   );
 }
 
 Skills.propTypes = {
-  skillsCategories: PropTypes.array,
+  skillsCategories: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      category: PropTypes.string,
+      skills: PropTypes.string,
+    }),
+  ).isRequired,
   setSkillsCategories: PropTypes.func.isRequired,
 };
 
