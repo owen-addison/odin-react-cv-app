@@ -12,6 +12,7 @@ function CVBuilder() {
   });
   const [educationalSections, setEducationalSections] = useState([]);
   const [professionalSections, setProfessionalSections] = useState([]);
+  const [skillsCategories, setSkillsCategories] = useState([]);
 
   return (
     <>
@@ -22,11 +23,14 @@ function CVBuilder() {
         setEducationalSections={setEducationalSections}
         professionalSections={professionalSections}
         setProfessionalSections={setProfessionalSections}
+        skillsCategories={skillsCategories}
+        setSkillsCategories={setSkillsCategories}
       />
       <DisplayPreview
         personalDetails={personalDetails}
         educationalSections={educationalSections}
         professionalSections={professionalSections}
+        skillsCategories={setSkillsCategories}
       />
     </>
   );
