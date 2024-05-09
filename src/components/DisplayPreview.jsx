@@ -4,6 +4,7 @@ function DisplayPreview({
   personalDetails,
   educationalSections,
   professionalSections,
+  skillsCategories,
 }) {
   return (
     <>
@@ -93,6 +94,26 @@ function DisplayPreview({
                 </div>
               ))}
           </div>
+          <div className="skills-section">
+            {skillsCategories
+              .filter(
+                (section) =>
+                  section.complete &&
+                  Object.values(section).some((value) => value),
+              )
+              .map((section) => (
+                <div className="categories-section" key={section.id}>
+                  <div className="container">
+                    <h3 className="font-semibold category-name">
+                      {section.category}:
+                    </h3>
+                  </div>
+                  <div className="container">
+                    <p className="category-skills">{section.skills}</p>
+                  </div>
+                </div>
+              ))}
+          </div>
         </div>
       </div>
     </>
@@ -109,6 +130,7 @@ DisplayPreview.propTypes = {
   }).isRequired,
   educationalSections: PropTypes.array,
   professionalSections: PropTypes.array,
+  skillsCategories: PropTypes.array,
 };
 
 export default DisplayPreview;
