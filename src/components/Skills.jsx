@@ -16,33 +16,47 @@ function Skills({ skillsCategories, setSkillsCategories }) {
   };
 
   return (
-    <div className="skills-container">
+    <div className="form-section skills-container flex">
       <div className="form-title-container">
         <span className="form-section-title">Skills</span>
       </div>
-      <form onSubmit={handleSubmit}>
-        <FormGroup
-          label="Category:"
-          type="text"
-          id="category"
-          value={formValues.category || ''}
-          onChange={handleChange}
-          required={true}
-        />
-        <FormGroup
-          label="Skills:"
-          type="textarea"
-          id="skills"
-          value={formValues.skills || ''}
-          onChange={handleChange}
-          required={true}
-        />
-        <div className="button-container">
-          <button type="submit" className="submit-button">
-            SUBMIT
-          </button>
+      <div className="stack-container flex flex-col flex-grow">
+        <div className="category-container">
+          <form
+            className="flex flex-col justify-start gap-2 content-start"
+            onSubmit={handleSubmit}
+          >
+            <FormGroup
+              label="Category:"
+              type="text"
+              id="category"
+              value={formValues.category || ''}
+              onChange={handleChange}
+              required={true}
+            />
+            <FormGroup
+              label="Skills:"
+              type="textarea"
+              id="skills"
+              value={formValues.skills || ''}
+              onChange={handleChange}
+              required={true}
+            />
+            <div className="button-container flex flex-row gap-4 justify-end">
+              <div className="remove-container flex flex-row justify-start my-2">
+                <button type="remove" className="remove-button">
+                  REMOVE
+                </button>
+              </div>
+              <div className="submit-container flex flex-row justify-start my-2">
+                <button type="submit" className="submit-button">
+                  SUBMIT
+                </button>
+              </div>
+            </div>
+          </form>
         </div>
-      </form>
+      </div>
     </div>
   );
 }
