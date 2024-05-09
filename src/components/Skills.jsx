@@ -14,7 +14,7 @@ function Category({ category, onRemove, onSubmit }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    onSubmit(formValues);
+    onSubmit({ ...formValues, complete: true });
   };
 
   return (
