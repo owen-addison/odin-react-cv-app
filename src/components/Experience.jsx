@@ -90,6 +90,7 @@ function Experience({
           type="textarea"
           id="description"
           value={formValues.description}
+          className="details"
           onChange={handleChange}
           required={true}
         />

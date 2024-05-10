@@ -36,6 +36,7 @@ function Category({ category, onRemove, onSubmit }) {
           type="textarea"
           id="skills"
           value={formValues.skills || ''}
+          className="skills-list"
           onChange={handleChange}
           required={true}
         />

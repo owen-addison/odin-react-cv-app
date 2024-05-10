@@ -37,7 +37,14 @@ body {
 
 .textarea-class {
   @apply w-full;
+}
+
+.textarea-class.details {
   @apply h-32;
+}
+
+.textarea-class.skills-list {
+  @apply h-7;
 }
 
 .disabled-input {
