@@ -43,7 +43,7 @@ function DisplayPreview({
           />
           <div className="skills-section px-6 py-4 text-left">
             <h2 className="section-title font-semibold text-lg mb-2">SKILLS</h2>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="flex flex-col space-y-4">
               {skillsCategories
                 .filter(
                   (category) =>
@@ -51,8 +51,13 @@ function DisplayPreview({
                     Object.values(category).some((value) => value),
                 )
                 .map((category) => (
-                  <div className="category-section" key={category.id}>
-                    <h3 className="font-semibold mb-1">{category.category}</h3>
+                  <div
+                    className="category-section flex flex-row"
+                    key={category.id}
+                  >
+                    <h3 className="category-title font-semibold mr-4">
+                      {category.category}
+                    </h3>
                     <p className="skills-list">{category.skills}</p>
                   </div>
                 ))}
