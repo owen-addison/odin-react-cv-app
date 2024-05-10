@@ -25,14 +25,18 @@ body {
   min-height: 100vh;
 }
 
-/* In your global CSS file */
 .custom-grid {
   grid-template-columns: 1fr 3fr;
 }
 
+label,
 .textarea-class,
 .input-class {
-  @apply p-2;
+  @apply px-2 py-1;
+}
+
+.textarea-class,
+.input-class {
   background-color: #333333;
 }
 
