@@ -44,7 +44,7 @@ function ExperienceSectionCV({ title, sections }) {
                     })}
               </p>
             </div>
-            <ul className="list-disc ml-4 mt-2">
+            <ul className="ml-8 mt-2">
               {section.description.split('\n').map((bullet, index) => (
                 <li key={index} className="list-none">
                   {bullet}
