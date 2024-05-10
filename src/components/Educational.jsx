@@ -10,6 +10,7 @@ function Educational({ educationalSections, setEducationalSections }) {
       id: uniqid(), // Generate a unique ID
       institute: '',
       study: '',
+      grade: '',
       startDate: '',
       endDate: '',
       stillHere: false,

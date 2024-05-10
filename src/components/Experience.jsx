@@ -116,6 +116,14 @@ function Experience({
               onChange={handleChange}
               required={true}
             />
+            <FormGroup
+              label="Grade:"
+              type="text"
+              id="grade"
+              value={formValues.grade}
+              onChange={handleChange}
+              required={true}
+            />
             {commonFormGroups}
           </>
         );
