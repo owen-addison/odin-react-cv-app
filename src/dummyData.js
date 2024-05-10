@@ -19,7 +19,17 @@ export const dummyEducationalSections = [
       'Studied advanced topics in computer science and software development.',
     complete: true,
   },
-  // Add more dummy educational sections as needed
+  {
+    id: '2',
+    institute: 'Design Academy',
+    study: 'Diploma in Graphic Design',
+    startDate: '2013-09-01',
+    endDate: '2015-06-30',
+    grade: 'Distinction',
+    description:
+      'Learned principles of design, typography, and visual communication.',
+    complete: true,
+  },
 ];
 
 export const dummyProfessionalSections = [
@@ -33,7 +43,24 @@ export const dummyProfessionalSections = [
       'Developed responsive web applications using modern frameworks.',
     complete: true,
   },
-  // Add more dummy professional sections as needed
+  {
+    id: '2',
+    company: 'XYZ Creative Agency',
+    position: 'Graphic Designer',
+    startDate: '2018-01-01',
+    endDate: '2019-06-30',
+    description: 'Designed visual assets for digital and print media.',
+    complete: true,
+  },
+  {
+    id: '3',
+    company: 'Freelance',
+    position: 'Web Developer & Designer',
+    startDate: '2021-01-01',
+    endDate: '',
+    description: 'Worked on various freelance projects for clients worldwide.',
+    complete: true,
+  },
 ];
 
 export const dummySkillsCategories = [
@@ -43,5 +70,16 @@ export const dummySkillsCategories = [
     skills: 'JavaScript, Python, HTML, CSS',
     complete: true,
   },
-  // Add more dummy skills categories as needed
+  {
+    id: '2',
+    category: 'Frameworks & Libraries',
+    skills: 'React, Angular, Node.js, Express',
+    complete: true,
+  },
+  {
+    id: '3',
+    category: 'Design Tools',
+    skills: 'Adobe Photoshop, Illustrator, Sketch',
+    complete: true,
+  },
 ];
