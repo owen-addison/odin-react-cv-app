@@ -45,7 +45,7 @@ function DisplayPreview({
               .map((section) => (
                 <div className="experience-section mb-4" key={section.id}>
                   <div className="flex justify-between">
-                    <div className="flex flex-row gap-4">
+                    <div className="flex flex-row gap-7">
                       <h3 className="font-semibold">{section.institute}</h3>
                       <div className="flex flex-row">
                         <p className="study">{section.study}</p>
@@ -60,9 +60,17 @@ function DisplayPreview({
                       </div>
                     </div>
                     <p className="dates">
-                      {section.startDate}
+                      {new Date(section.startDate).toLocaleString('default', {
+                        month: 'long',
+                        year: 'numeric',
+                      })}
                       <span className="hyphen mx-2 font-normal">-</span>
-                      {section.stillHere ? 'Present' : section.endDate}
+                      {section.stillHere
+                        ? 'Present'
+                        : new Date(section.endDate).toLocaleString('default', {
+                            month: 'long',
+                            year: 'numeric',
+                          })}
                     </p>
                   </div>
                   <ul className="list-disc ml-4 mt-2">
