@@ -12,7 +12,7 @@ function ExperienceSectionCV({ title, sections }) {
         .map((section) => (
           <div className="experience-item mb-4" key={section.id}>
             <div className="flex justify-between">
-              <div className="flex flex-row gap-7">
+              <div className="flex flex-col gap-1">
                 <h3 className="font-semibold">
                   {section.company || section.institute}
                 </h3>
