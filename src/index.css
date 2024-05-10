@@ -108,3 +108,8 @@ button {
   color: rgba(255, 255, 255, 0.87);
   border-color: rgb(120, 120, 120);
 }
+
+.experience-item,
+.category-section {
+  @apply pl-4;
+}
