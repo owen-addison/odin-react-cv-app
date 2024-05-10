@@ -4,7 +4,7 @@ export const dummyPersonalDetails = {
   telephone: '+1 123-456-7890',
   website: 'www.janedoe.com',
   about:
-    'Creative professional with a background in web development and design.',
+    'Creative professional with a background in web development and design. Working as part of multi-disciplinary teams to drive development of cutting edge products using modern frameworks.',
 };
 
 export const dummyEducationalSections = [
@@ -40,7 +40,7 @@ export const dummyProfessionalSections = [
     startDate: '2019-07-01',
     endDate: '2021-12-31',
     description:
-      'Developed responsive web applications using modern frameworks.',
+      'Developed responsive web applications using modern frameworks. Worked as part of a multi-disciplinary team to develop new products.',
     complete: true,
   },
   {
@@ -67,19 +67,19 @@ export const dummySkillsCategories = [
   {
     id: '1',
     category: 'Programming Languages',
-    skills: 'JavaScript, Python, HTML, CSS',
+    skills: 'JavaScript, Python, HTML, CSS, C#',
     complete: true,
   },
   {
     id: '2',
     category: 'Frameworks & Libraries',
-    skills: 'React, Angular, Node.js, Express',
+    skills: 'React, Angular, Svelte, Node.js, Express',
     complete: true,
   },
   {
     id: '3',
     category: 'Design Tools',
-    skills: 'Adobe Photoshop, Illustrator, Sketch',
+    skills: 'Adobe Creative Cloud, Figma, Illustrator, Sketch',
     complete: true,
   },
 ];
