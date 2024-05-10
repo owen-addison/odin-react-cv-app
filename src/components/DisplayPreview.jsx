@@ -32,7 +32,10 @@ function DisplayPreview({
               </div>
             </div>
           </div>
-          <div className="education-section">
+          <div className="education-section px-6 py-4">
+            <h2 className="section-title font-semibold text-lg mb-2">
+              EDUCATION & TRAINING
+            </h2>
             {educationalSections
               .filter(
                 (section) =>
@@ -40,26 +43,22 @@ function DisplayPreview({
                   Object.values(section).some((value) => value),
               )
               .map((section) => (
-                <div className="experience-section" key={section.id}>
-                  <div className="container">
-                    <h3 className="font-semibold">Institution:</h3>
-                    <p className="institution">{section.institute}</p>
-                  </div>
-                  <div className="container">
-                    <h3 className="font-semibold">Study:</h3>
-                    <p className="study">{section.study}</p>
-                  </div>
-                  <div className="container">
-                    <h3 className="font-semibold">Dates:</h3>
+                <div className="experience-section mb-4" key={section.id}>
+                  <div className="flex justify-between">
+                    <div>
+                      <h3 className="font-semibold">{section.institute}</h3>
+                      <p className="study">{section.study}</p>
+                    </div>
                     <p className="dates">
                       {section.startDate} -{' '}
-                      {section.stillHere ? `present` : section.endDate}
+                      {section.stillHere ? 'Present' : section.endDate}
                     </p>
                   </div>
-                  <div className="container">
-                    <h3 className="font-semibold">Description:</h3>
-                    <p className="description">{section.description}</p>
-                  </div>
+                  <ul className="list-disc ml-4 mt-2">
+                    {section.description.split('\n').map((bullet, index) => (
+                      <li key={index}>{bullet}</li>
+                    ))}
+                  </ul>
                 </div>
               ))}
           </div>
