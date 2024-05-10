@@ -1,3 +1,4 @@
+import ExperienceSectionCV from './ExperienceSectionCV';
 import PropTypes from 'prop-types';
 
 function DisplayPreview({
@@ -32,88 +33,14 @@ function DisplayPreview({
               </div>
             </div>
           </div>
-          <div className="education-section px-6 py-4 text-left">
-            <h2 className="section-title font-semibold text-lg mb-2">
-              EDUCATION & TRAINING
-            </h2>
-            {educationalSections
-              .filter(
-                (section) =>
-                  section.complete &&
-                  Object.values(section).some((value) => value),
-              )
-              .map((section) => (
-                <div className="experience-section mb-4" key={section.id}>
-                  <div className="flex justify-between">
-                    <div className="flex flex-row gap-7">
-                      <h3 className="font-semibold">{section.institute}</h3>
-                      <div className="flex flex-row">
-                        <p className="study">{section.study}</p>
-                        {section.grade ? (
-                          <p className="grade italic font-medium">
-                            <span className="hyphen mx-1 font-normal">-</span>
-                            {section.grade}
-                          </p>
-                        ) : (
-                          <></>
-                        )}
-                      </div>
-                    </div>
-                    <p className="dates">
-                      {new Date(section.startDate).toLocaleString('default', {
-                        month: 'long',
-                        year: 'numeric',
-                      })}
-                      <span className="hyphen mx-2 font-normal">-</span>
-                      {section.stillHere
-                        ? 'Present'
-                        : new Date(section.endDate).toLocaleString('default', {
-                            month: 'long',
-                            year: 'numeric',
-                          })}
-                    </p>
-                  </div>
-                  <ul className="list-disc ml-4 mt-2">
-                    {section.description.split('\n').map((bullet, index) => (
-                      <li key={index} className="list-none">
-                        {bullet}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-          </div>
-          <div className="professional-section">
-            {professionalSections
-              .filter(
-                (section) =>
-                  section.complete &&
-                  Object.values(section).some((value) => value),
-              )
-              .map((section) => (
-                <div className="experience-section" key={section.id}>
-                  <div className="container">
-                    <h3 className="font-semibold">Company:</h3>
-                    <p className="company">{section.company}</p>
-                  </div>
-                  <div className="container">
-                    <h3 className="font-semibold">Position:</h3>
-                    <p className="position">{section.position}</p>
-                  </div>
-                  <div className="container">
-                    <h3 className="font-semibold">Dates:</h3>
-                    <p className="dates">
-                      {section.startDate} -{' '}
-                      {section.stillHere ? `present` : section.endDate}
-                    </p>
-                  </div>
-                  <div className="container">
-                    <h3 className="font-semibold">Description:</h3>
-                    <p className="description">{section.description}</p>
-                  </div>
-                </div>
-              ))}
-          </div>
+          <ExperienceSectionCV
+            title="EDUCATION & TRAINING"
+            sections={educationalSections}
+          />
+          <ExperienceSectionCV
+            title="PROFESSIONAL EXPERIENCE"
+            sections={professionalSections}
+          />
           <div className="skills-section">
             {skillsCategories
               .filter(
