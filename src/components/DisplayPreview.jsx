@@ -67,7 +67,9 @@ function DisplayPreview({
                   </div>
                   <ul className="list-disc ml-4 mt-2">
                     {section.description.split('\n').map((bullet, index) => (
-                      <li key={index}>{bullet}</li>
+                      <li key={index} className="list-none">
+                        {bullet}
+                      </li>
                     ))}
                   </ul>
                 </div>
