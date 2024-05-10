@@ -110,7 +110,7 @@ function Experience({
               required={true}
             />
             <FormGroup
-              label="Area of Study:"
+              label="Subject:"
               type="text"
               id="study"
               value={formValues.study}
