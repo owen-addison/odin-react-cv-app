@@ -45,7 +45,7 @@ function DisplayPreview({
               .map((section) => (
                 <div className="experience-section mb-4" key={section.id}>
                   <div className="flex justify-between">
-                    <div>
+                    <div className="flex flex-row gap-4">
                       <h3 className="font-semibold">{section.institute}</h3>
                       <p className="study">{section.study}</p>
                     </div>
