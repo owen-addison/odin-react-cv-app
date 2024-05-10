@@ -12,8 +12,19 @@ function FormGroup({
   className,
 }) {
   return (
-    <div className="form-group grid grid-cols-[1fr,3fr] gap-4 justify-items-start items-start text-start text-sm">
-      <label htmlFor={id}>{label}</label>
+    <div className="form-group grid grid-cols-[1fr,3fr] gap-4 justify-items-start items-center text-start text-sm">
+      <label
+        htmlFor={id}
+        className={
+          type === 'textarea'
+            ? id === 'skills'
+              ? 'self-center'
+              : 'self-start'
+            : 'self-center'
+        }
+      >
+        {label}
+      </label>
       {type !== 'textarea' ? (
         <input
           type={type}
