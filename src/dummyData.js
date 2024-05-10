@@ -11,10 +11,10 @@ export const dummyEducationalSections = [
   {
     id: '1',
     institute: 'University of Technology',
-    study: 'BSc in Computer Science',
+    study: 'BSc Computer Science (Hons)',
     startDate: '2015-09-01',
     endDate: '2019-06-30',
-    grade: 'First Class Honours',
+    grade: '1st',
     description:
       'Studied advanced topics in computer science and software development.',
     complete: true,
