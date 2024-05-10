@@ -45,7 +45,7 @@ body {
 }
 
 .textarea-class.skills-list {
-  @apply h-7;
+  @apply h-9;
 }
 
 .disabled-input {
