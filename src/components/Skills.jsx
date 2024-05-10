@@ -20,7 +20,7 @@ function Category({ category, onRemove, onSubmit }) {
   return (
     <div className="category-container">
       <form
-        className="flex flex-col justify-start gap-2 content-start"
+        className="flex flex-col justify-start content-start"
         onSubmit={handleSubmit}
       >
         <FormGroup

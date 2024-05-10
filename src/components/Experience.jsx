@@ -53,7 +53,7 @@ function Experience({
   const getFormGroups = () => {
     const commonFormGroups = (
       <>
-        <div className="dates-container flex flex-col gap-4">
+        <div className="dates-container flex flex-col">
           <FormGroup
             label="Start Date:"
             type="date"
@@ -158,10 +158,10 @@ function Experience({
   return (
     <div className="experience-container">
       <form
-        className="flex flex-col justify-start gap-2 content-start"
+        className="flex flex-col justify-start content-start"
         onSubmit={handleSubmit}
       >
-        <div className="experience-section flex flex-col justify-start gap-2 content-start">
+        <div className="experience-section flex flex-col justify-start content-start">
           {getFormGroups()}
         </div>
         <ButtonContainer onRemove={onRemove} onSubmit={handleSubmit} />
