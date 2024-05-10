@@ -41,25 +41,22 @@ function DisplayPreview({
             title="PROFESSIONAL EXPERIENCE"
             sections={professionalSections}
           />
-          <div className="skills-section">
-            {skillsCategories
-              .filter(
-                (section) =>
-                  section.complete &&
-                  Object.values(section).some((value) => value),
-              )
-              .map((section) => (
-                <div className="categories-section" key={section.id}>
-                  <div className="container">
-                    <h3 className="font-semibold category-name">
-                      {section.category}:
-                    </h3>
+          <div className="skills-section px-6 py-4 text-left">
+            <h2 className="section-title font-semibold text-lg mb-2">SKILLS</h2>
+            <div className="grid grid-cols-2 gap-4">
+              {skillsCategories
+                .filter(
+                  (category) =>
+                    category.complete &&
+                    Object.values(category).some((value) => value),
+                )
+                .map((category) => (
+                  <div className="category-section" key={category.id}>
+                    <h3 className="font-semibold mb-1">{category.category}</h3>
+                    <p className="skills-list">{category.skills}</p>
                   </div>
-                  <div className="container">
-                    <p className="category-skills">{section.skills}</p>
-                  </div>
-                </div>
-              ))}
+                ))}
+            </div>
           </div>
         </div>
       </div>
