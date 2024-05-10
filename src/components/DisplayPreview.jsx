@@ -32,7 +32,7 @@ function DisplayPreview({
               </div>
             </div>
           </div>
-          <div className="education-section px-6 py-4">
+          <div className="education-section px-6 py-4 text-left">
             <h2 className="section-title font-semibold text-lg mb-2">
               EDUCATION & TRAINING
             </h2>
