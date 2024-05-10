@@ -16,33 +16,31 @@ function ExperienceSectionCV({ title, sections }) {
                 <h3 className="font-semibold">
                   {section.company || section.institute}
                 </h3>
-                <div className="flex flex-row">
-                  <p className="position">
-                    {section.position || section.study}
-                  </p>
-                  {section.grade ? (
-                    <p className="grade italic font-medium">
-                      <span className="hyphen mx-1 font-normal">-</span>
-                      {section.grade}
-                    </p>
-                  ) : (
-                    <></>
-                  )}
-                </div>
+                <p className="dates">
+                  {new Date(section.startDate).toLocaleString('default', {
+                    month: 'long',
+                    year: 'numeric',
+                  })}
+                  <span className="hyphen mx-2 font-normal">-</span>
+                  {section.stillHere
+                    ? 'Present'
+                    : new Date(section.endDate).toLocaleString('default', {
+                        month: 'long',
+                        year: 'numeric',
+                      })}
+                </p>
               </div>
-              <p className="dates">
-                {new Date(section.startDate).toLocaleString('default', {
-                  month: 'long',
-                  year: 'numeric',
-                })}
-                <span className="hyphen mx-2 font-normal">-</span>
-                {section.stillHere
-                  ? 'Present'
-                  : new Date(section.endDate).toLocaleString('default', {
-                      month: 'long',
-                      year: 'numeric',
-                    })}
-              </p>
+              <div className="flex flex-row">
+                <p className="position">{section.position || section.study}</p>
+                {section.grade ? (
+                  <p className="grade italic font-medium">
+                    <span className="hyphen mx-1 font-normal">-</span>
+                    {section.grade}
+                  </p>
+                ) : (
+                  <></>
+                )}
+              </div>
             </div>
             <ul className="ml-8 mt-2">
               {section.description.split('\n').map((bullet, index) => (
