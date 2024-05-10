@@ -35,7 +35,7 @@ function FormGroup({
           required={required}
           onChange={onChange}
           disabled={disabled}
-          className={`input-class ${className}`}
+          className={`input-class ${className === undefined ? '' : className}`}
         />
       ) : (
         <textarea
