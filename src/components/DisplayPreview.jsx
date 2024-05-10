@@ -47,10 +47,21 @@ function DisplayPreview({
                   <div className="flex justify-between">
                     <div className="flex flex-row gap-4">
                       <h3 className="font-semibold">{section.institute}</h3>
-                      <p className="study">{section.study}</p>
+                      <div className="flex flex-row">
+                        <p className="study">{section.study}</p>
+                        {section.grade ? (
+                          <p className="grade italic font-medium">
+                            <span className="hyphen mx-1 font-normal">-</span>
+                            {section.grade}
+                          </p>
+                        ) : (
+                          <></>
+                        )}
+                      </div>
                     </div>
                     <p className="dates">
-                      {section.startDate} -{' '}
+                      {section.startDate}
+                      <span className="hyphen mx-2 font-normal">-</span>
                       {section.stillHere ? 'Present' : section.endDate}
                     </p>
                   </div>
