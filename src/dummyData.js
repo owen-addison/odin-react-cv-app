@@ -1,10 +1,10 @@
 export const dummyPersonalDetails = {
   name: 'Jane Doe',
   email: 'jane.doe@example.com',
-  telephone: '+1 123-456-7890',
+  telephone: '+44 7123 456789',
   website: 'www.janedoe.com',
   about:
-    'Creative professional with a background in web development and design. Working as part of multi-disciplinary teams to drive development of cutting edge products using modern frameworks.',
+    'Creative professional with a background in web development and design. Passionate about creating engaging user experiences and driving innovation through technology.',
 };
 
 export const dummyEducationalSections = [
@@ -14,9 +14,9 @@ export const dummyEducationalSections = [
     study: 'BSc Computer Science (Hons)',
     startDate: '2015-09-01',
     endDate: '2019-06-30',
-    grade: '1st',
+    grade: 'First Class',
     description:
-      'Studied advanced topics in computer science and software development.',
+      'Studied advanced topics in computer science and software development. Completed a final year project on developing a responsive web application using modern frameworks.',
     complete: true,
   },
   {
@@ -27,7 +27,7 @@ export const dummyEducationalSections = [
     endDate: '2015-06-30',
     grade: 'Distinction',
     description:
-      'Learned principles of design, typography, and visual communication.',
+      'Learned principles of design, typography, and visual communication. Developed a strong portfolio showcasing design skills across various media.',
     complete: true,
   },
 ];
@@ -40,7 +40,7 @@ export const dummyProfessionalSections = [
     startDate: '2019-07-01',
     endDate: '2021-12-31',
     description:
-      'Developed responsive web applications using modern frameworks. Worked as part of a multi-disciplinary team to develop new products.',
+      'Developed responsive web applications using modern frameworks such as React and Angular. Collaborated with cross-functional teams to deliver high-quality software solutions. Implemented best practices in code organisation and maintained clean, reusable code.',
     complete: true,
   },
   {
@@ -49,7 +49,8 @@ export const dummyProfessionalSections = [
     position: 'Graphic Designer',
     startDate: '2018-01-01',
     endDate: '2019-06-30',
-    description: 'Designed visual assets for digital and print media.',
+    description:
+      'Designed visual assets for digital and print media. Worked closely with clients to understand their requirements and delivered designs that met their needs.',
     complete: true,
   },
   {
@@ -58,7 +59,8 @@ export const dummyProfessionalSections = [
     position: 'Web Developer & Designer',
     startDate: '2021-01-01',
     endDate: '',
-    description: 'Worked on various freelance projects for clients worldwide.',
+    description:
+      'Worked on various freelance projects for clients worldwide. Developed custom websites and web applications using modern technologies. Provided end-to-end solutions from design to deployment.',
     complete: true,
   },
 ];
@@ -67,19 +69,19 @@ export const dummySkillsCategories = [
   {
     id: '1',
     category: 'Programming Languages',
-    skills: 'JavaScript, Python, HTML, CSS, C#',
+    skills: 'JavaScript, TypeScript, Python, HTML, CSS, C#',
     complete: true,
   },
   {
     id: '2',
     category: 'Frameworks & Libraries',
-    skills: 'React, Angular, Svelte, Node.js, Express',
+    skills: 'React, Angular, Vue.js, Node.js, Express',
     complete: true,
   },
   {
     id: '3',
     category: 'Design Tools',
-    skills: 'Adobe Creative Cloud, Figma, Illustrator, Sketch',
+    skills: 'Adobe Creative Suite, Figma, Sketch, InVision',
     complete: true,
   },
 ];
