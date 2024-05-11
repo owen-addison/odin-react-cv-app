@@ -7,10 +7,16 @@ function DisplayPreview({
   professionalSections,
   skillsCategories,
 }) {
+  const currentDate = new Date();
+  const formattedDate = currentDate.toLocaleString('en-GB', {
+    month: 'long',
+    year: 'numeric',
+  });
+
   return (
     <>
       <div id="cv-container" className="mx-10 mb-4">
-        <div id="cv" className="w-a4 h-a4 bg-white text-slate-800">
+        <div id="cv" className="w-a4 h-a4 bg-white text-slate-800 relative">
           <div className="personal-section px-6 py-4">
             <div className="header flex flex-row justify-between">
               <div className="header-left text-start">
@@ -62,6 +68,9 @@ function DisplayPreview({
                   </div>
                 ))}
             </div>
+          </div>
+          <div className="timestamp absolute bottom-4 right-6 text-xs text-right">
+            {formattedDate}
           </div>
         </div>
       </div>
