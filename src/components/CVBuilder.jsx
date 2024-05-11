@@ -31,6 +31,10 @@ function CVBuilder() {
         setProfessionalSections={setProfessionalSections}
         skillsCategories={skillsCategories}
         setSkillsCategories={setSkillsCategories}
+        dummyPersonalDetails={dummyPersonalDetails}
+        dummyEducationalSections={dummyEducationalSections}
+        dummyProfessionalSections={dummyProfessionalSections}
+        dummySkillsCategories={dummySkillsCategories}
       />
       <DisplayPreview
         personalDetails={personalDetails}
