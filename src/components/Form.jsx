@@ -13,6 +13,10 @@ function Form({
   setProfessionalSections,
   skillsCategories,
   setSkillsCategories,
+  dummyPersonalDetails,
+  dummyEducationalSections,
+  dummyProfessionalSections,
+  dummySkillsCategories,
 }) {
   // Function to update personal details when the form is submitted
   const handlePersonalDetailsSubmit = (newDetails) => {
@@ -25,18 +29,22 @@ function Form({
         <Personal
           personalDetails={personalDetails}
           setPersonalDetails={handlePersonalDetailsSubmit}
+          dummyPersonalDetails={dummyPersonalDetails}
         />
         <Educational
           educationalSections={educationalSections}
           setEducationalSections={setEducationalSections}
+          dummyEducationalSections={dummyEducationalSections}
         />
         <Professional
           professionalSections={professionalSections}
           setProfessionalSections={setProfessionalSections}
+          dummyProfessionalSections={dummyProfessionalSections}
         />
         <Skills
           skillsCategories={skillsCategories}
           setSkillsCategories={setSkillsCategories}
+          dummySkillsCategories={dummySkillsCategories}
         />
       </div>
     </>
@@ -58,6 +66,16 @@ Form.propTypes = {
   setProfessionalSections: PropTypes.func.isRequired,
   skillsCategories: PropTypes.array,
   setSkillsCategories: PropTypes.func.isRequired,
+  dummyPersonalDetails: PropTypes.shape({
+    name: PropTypes.string,
+    email: PropTypes.string,
+    phoneNumber: PropTypes.string,
+    website: PropTypes.string,
+    about: PropTypes.string,
+  }).isRequired,
+  dummyEducationalSections: PropTypes.array.isRequired,
+  dummyProfessionalSections: PropTypes.array.isRequired,
+  dummySkillsCategories: PropTypes.array.isRequired,
 };
 
 export default Form;
