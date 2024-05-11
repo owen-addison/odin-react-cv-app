@@ -2,12 +2,12 @@ import FormGroup from './FormGroup';
 import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
 
-function Personal({ personalDetails, setPersonalDetails }) {
-  const [formValues, setFormValues] = useState({ ...personalDetails });
+function Personal({ setPersonalDetails, dummyPersonalDetails }) {
+  const [formValues, setFormValues] = useState({});
 
   useEffect(() => {
-    setFormValues({ ...personalDetails });
-  }, [personalDetails]);
+    setFormValues({ ...dummyPersonalDetails });
+  }, []); // Empty dependency array to run the effect only on mount
 
   const handleChange = (event) => {
     const { id, value } = event.target;
@@ -102,6 +102,13 @@ Personal.propTypes = {
     about: PropTypes.string,
   }).isRequired,
   setPersonalDetails: PropTypes.func.isRequired,
+  dummyPersonalDetails: PropTypes.shape({
+    name: PropTypes.string,
+    email: PropTypes.string,
+    telephone: PropTypes.string,
+    website: PropTypes.string,
+    about: PropTypes.string,
+  }).isRequired,
 };
 
 export default Personal;
