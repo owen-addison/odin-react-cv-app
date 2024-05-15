@@ -61,6 +61,7 @@ function Experience({
             value={formValues.startDate}
             onChange={handleChange}
             required={true}
+            placeholder={experienceDetails.startDate}
           />
           <FormGroup
             label="End Date:"
@@ -75,6 +76,7 @@ function Experience({
             required={!formValues.stillHere}
             disabled={formValues.stillHere}
             className={formValues.stillHere ? 'disabled-input' : ''}
+            placeholder={experienceDetails.endDate}
           />
           <FormGroup
             label="Still Here:"
@@ -83,6 +85,7 @@ function Experience({
             checked={formValues.stillHere}
             onChange={handleChange}
             className={'self-center'}
+            placeholder={experienceDetails.stillHere}
           />
         </div>
         <FormGroup
@@ -93,6 +96,7 @@ function Experience({
           className="details"
           onChange={handleChange}
           required={true}
+          placeholder={experienceDetails.description}
         />
       </>
     );
@@ -108,6 +112,7 @@ function Experience({
               value={formValues.institute}
               onChange={handleChange}
               required={true}
+              placeholder={experienceDetails.institute}
             />
             <FormGroup
               label="Subject:"
@@ -116,6 +121,7 @@ function Experience({
               value={formValues.study}
               onChange={handleChange}
               required={true}
+              placeholder={experienceDetails.study}
             />
             <FormGroup
               label="Grade:"
@@ -124,6 +130,7 @@ function Experience({
               value={formValues.grade}
               onChange={handleChange}
               required={true}
+              placeholder={experienceDetails.grade}
             />
             {commonFormGroups}
           </>
@@ -138,6 +145,7 @@ function Experience({
               value={formValues.company}
               onChange={handleChange}
               required={true}
+              placeholder={experienceDetails.company}
             />
             <FormGroup
               label="Position:"
@@ -146,6 +154,7 @@ function Experience({
               value={formValues.position}
               onChange={handleChange}
               required={true}
+              placeholder={experienceDetails.position}
             />
             {commonFormGroups}
           </>
@@ -174,8 +183,12 @@ Experience.propTypes = {
   type: PropTypes.string.isRequired,
   experienceDetails: PropTypes.shape({
     institute: PropTypes.string,
+    company: PropTypes.string,
     study: PropTypes.string,
+    position: PropTypes.string,
+    grade: PropTypes.string,
     description: PropTypes.string,
+    startDate: PropTypes.string,
     endDate: PropTypes.string,
     stillHere: PropTypes.bool,
     complete: PropTypes.bool,

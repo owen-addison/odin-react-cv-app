@@ -30,6 +30,7 @@ function Category({ category, onRemove, onSubmit }) {
           value={formValues.category || ''}
           onChange={handleChange}
           required={true}
+          placeholder={category.category}
         />
         <FormGroup
           label="Skills:"
@@ -39,6 +40,7 @@ function Category({ category, onRemove, onSubmit }) {
           className="skills-list"
           onChange={handleChange}
           required={true}
+          placeholder={category.skills}
         />
         <ButtonContainer onRemove={onRemove} onSubmit={handleSubmit} />
       </form>
