@@ -14,6 +14,19 @@ function DisplayPreview({
     year: 'numeric',
   });
 
+  const handleDownloadPDF = () => {
+    const cvElement = document.getElementById('cv');
+    const opt = {
+      margin: [0, 0, 0, 0],
+      filename: 'my_cv.pdf',
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2 },
+      jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+    };
+
+    html2pdf().from(cvElement).set(opt).save();
+  };
+
   return (
     <>
       <div id="cv-container" className="mx-10 mb-4">
