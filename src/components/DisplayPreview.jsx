@@ -87,6 +87,9 @@ function DisplayPreview({
             {formattedDate}
           </div>
         </div>
+        <button onClick={handleDownloadPDF} className="download-button">
+          Download PDF
+        </button>
       </div>
     </>
   );
