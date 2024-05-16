@@ -1,5 +1,6 @@
 import ExperienceSectionCV from './ExperienceSectionCV';
 import PropTypes from 'prop-types';
+import html2pdf from 'html2pdf.js';
 
 function DisplayPreview({
   personalDetails,
