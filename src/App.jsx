@@ -1,5 +1,5 @@
 import CVBuilder from './components/CVBuilder';
-import './App.css';
+import './styles/App.css';
 
 function App() {
   return (
