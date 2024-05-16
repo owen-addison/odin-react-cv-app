@@ -88,14 +88,16 @@ button {
   text-orientation: sideways-right;
 }
 
-.submit-button {
-  @apply w-min border-solid rounded-2xl px-5 py-2 tracking-widest text-xs;
+.submit-button,
+.download-button {
+  @apply w-max border-solid rounded-2xl px-5 py-2 tracking-widest text-xs;
   background-color: rgba(255, 255, 255, 0.87);
   border-color: rgba(255, 255, 255, 0.87);
   color: #333333;
 }
 
-.submit-button:hover {
+.submit-button:hover,
+.download-button:hover {
   background-color: #eeff00;
   color: #333333;
   border-color: #eeff00;
